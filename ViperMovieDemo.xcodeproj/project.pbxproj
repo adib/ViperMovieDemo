@@ -14,6 +14,46 @@
 		C060DA1F24388A7A00C993D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C060DA1E24388A7A00C993D8 /* Assets.xcassets */; };
 		C060DA2224388A7A00C993D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C060DA2024388A7A00C993D8 /* LaunchScreen.storyboard */; };
 		C060DA2D24388A7A00C993D8 /* ViperMovieDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA2C24388A7A00C993D8 /* ViperMovieDemoTests.swift */; };
+		C060DA4424388B4900C993D8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA4224388B4800C993D8 /* Movie.swift */; };
+		C060DA4524388B4900C993D8 /* GenericResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA4324388B4900C993D8 /* GenericResult.swift */; };
+		C060DA4724388BA000C993D8 /* libDomainEntities.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA3B24388AB000C993D8 /* libDomainEntities.a */; };
+		C060DA5724388F3000C993D8 /* MovieDetailInteractorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA5424388F3000C993D8 /* MovieDetailInteractorImp.swift */; };
+		C060DA5824388F3000C993D8 /* Interfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA5524388F3000C993D8 /* Interfaces.swift */; };
+		C060DA5924388F3000C993D8 /* MovieListInteractorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA5624388F3000C993D8 /* MovieListInteractorImp.swift */; };
+		C060DA5A24388F5500C993D8 /* libBusinessLogic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA4C24388E9A00C993D8 /* libBusinessLogic.a */; };
+		C060DA682438998200C993D8 /* MovieDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA672438998100C993D8 /* MovieDataAdapter.swift */; };
+		C060DA692438999200C993D8 /* libApplicationLogic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA5F2438988100C993D8 /* libApplicationLogic.a */; };
+		C060DA6A243899D200C993D8 /* libDomainEntities.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA3B24388AB000C993D8 /* libDomainEntities.a */; };
+		C060DA6B243899DE00C993D8 /* libBusinessLogic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA4C24388E9A00C993D8 /* libBusinessLogic.a */; };
+		C060DA6C243899E200C993D8 /* libDomainEntities.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA3B24388AB000C993D8 /* libDomainEntities.a */; };
+		C060DA8324389A9A00C993D8 /* MovieCellContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7524389A9A00C993D8 /* MovieCellContentView.swift */; };
+		C060DA8424389A9A00C993D8 /* MovieOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7624389A9A00C993D8 /* MovieOverviewTableViewCell.swift */; };
+		C060DA8524389A9A00C993D8 /* MovieImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7724389A9A00C993D8 /* MovieImageCollectionViewCell.swift */; };
+		C060DA8624389A9A00C993D8 /* MovieDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7924389A9A00C993D8 /* MovieDataAdapter.swift */; };
+		C060DA8724389A9A00C993D8 /* Interfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7A24389A9A00C993D8 /* Interfaces.swift */; };
+		C060DA8824389A9A00C993D8 /* MovieBrowserWireframeImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7C24389A9A00C993D8 /* MovieBrowserWireframeImp.swift */; };
+		C060DA8924389A9A00C993D8 /* MovieSummaryPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7E24389A9A00C993D8 /* MovieSummaryPresenterImp.swift */; };
+		C060DA8A24389A9A00C993D8 /* MovieDetailPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7F24389A9A00C993D8 /* MovieDetailPresenterImp.swift */; };
+		C060DA8B24389A9A00C993D8 /* MovieListPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA8024389A9A00C993D8 /* MovieListPresenterImp.swift */; };
+		C060DA8C24389A9A00C993D8 /* DiscoverMoviesViewControllerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA8224389A9A00C993D8 /* DiscoverMoviesViewControllerImp.swift */; };
+		C060DA9D24389B4700C993D8 /* MovieDatabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA9A24389B4700C993D8 /* MovieDatabaseClient.swift */; };
+		C060DA9E24389B4700C993D8 /* NetworkShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA9B24389B4700C993D8 /* NetworkShared.swift */; };
+		C060DA9F24389B4700C993D8 /* Interfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA9C24389B4700C993D8 /* Interfaces.swift */; };
+		C060DAA024389B6000C993D8 /* libExternalInterfaces.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA9224389B1B00C993D8 /* libExternalInterfaces.a */; };
+		C060DAA824389C0000C993D8 /* ExternalInterfacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DAA724389C0000C993D8 /* ExternalInterfacesTests.swift */; };
+		C060DAAA24389C0000C993D8 /* libExternalInterfaces.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA9224389B1B00C993D8 /* libExternalInterfaces.a */; };
+		C060DAB924389CF100C993D8 /* TestProtocolHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DAB124389C6000C993D8 /* TestProtocolHandler.swift */; };
+		C060DABA24389CF500C993D8 /* MovieDatabaseClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DAB424389C6000C993D8 /* MovieDatabaseClientTests.swift */; };
+		C060DABB24389CF900C993D8 /* discover_results.json in Resources */ = {isa = PBXBuildFile; fileRef = C060DAB324389C6000C993D8 /* discover_results.json */; };
+		C060DABC24389CFE00C993D8 /* MovieDatabaseClientTestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DAB524389C6000C993D8 /* MovieDatabaseClientTestTarget.swift */; };
+		C060DACB24389D6100C993D8 /* TestUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DAC224389D6100C993D8 /* TestUtilities.framework */; };
+		C060DAD024389D6100C993D8 /* TestUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DACF24389D6100C993D8 /* TestUtilitiesTests.swift */; };
+		C060DAD224389D6100C993D8 /* TestUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = C060DAC424389D6100C993D8 /* TestUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C060DADA24389D9800C993D8 /* ResourceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DAD924389D9800C993D8 /* ResourceLoader.swift */; };
+		C060DADB24389E2900C993D8 /* libApplicationLogic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA5F2438988100C993D8 /* libApplicationLogic.a */; };
+		C060DADC24389E2900C993D8 /* libBusinessLogic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA4C24388E9A00C993D8 /* libBusinessLogic.a */; };
+		C060DADD24389E2900C993D8 /* libDomainEntities.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA3B24388AB000C993D8 /* libDomainEntities.a */; };
+		C0DE14182438A1CB00E09C97 /* TestUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DAC224389D6100C993D8 /* TestUtilities.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +64,81 @@
 			remoteGlobalIDString = C060DA1124388A7900C993D8;
 			remoteInfo = ViperMovieDemo;
 		};
+		C060DA6D24389A0100C993D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C060DA0A24388A7900C993D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C060DA3A24388AB000C993D8;
+			remoteInfo = DomainEntities;
+		};
+		C060DA6F24389A0700C993D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C060DA0A24388A7900C993D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C060DA4B24388E9A00C993D8;
+			remoteInfo = BusinessLogic;
+		};
+		C060DA7124389A0700C993D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C060DA0A24388A7900C993D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C060DA3A24388AB000C993D8;
+			remoteInfo = DomainEntities;
+		};
+		C060DAAB24389C0000C993D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C060DA0A24388A7900C993D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C060DA9124389B1B00C993D8;
+			remoteInfo = ExternalInterfaces;
+		};
+		C060DACC24389D6100C993D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C060DA0A24388A7900C993D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C060DAC124389D6100C993D8;
+			remoteInfo = TestUtilities;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C060DA3924388AB000C993D8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DA4A24388E9A00C993D8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DA5D2438988100C993D8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DA9024389B1B00C993D8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C060DA1224388A7900C993D8 /* ViperMovieDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViperMovieDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +152,44 @@
 		C060DA2824388A7A00C993D8 /* ViperMovieDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViperMovieDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C060DA2C24388A7A00C993D8 /* ViperMovieDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViperMovieDemoTests.swift; sourceTree = "<group>"; };
 		C060DA2E24388A7A00C993D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C060DA3B24388AB000C993D8 /* libDomainEntities.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDomainEntities.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C060DA4224388B4800C993D8 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		C060DA4324388B4900C993D8 /* GenericResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericResult.swift; sourceTree = "<group>"; };
+		C060DA4C24388E9A00C993D8 /* libBusinessLogic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBusinessLogic.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C060DA5324388EB600C993D8 /* ViperMovieDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ViperMovieDemo.entitlements; sourceTree = "<group>"; };
+		C060DA5424388F3000C993D8 /* MovieDetailInteractorImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailInteractorImp.swift; sourceTree = "<group>"; };
+		C060DA5524388F3000C993D8 /* Interfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interfaces.swift; sourceTree = "<group>"; };
+		C060DA5624388F3000C993D8 /* MovieListInteractorImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListInteractorImp.swift; sourceTree = "<group>"; };
+		C060DA5F2438988100C993D8 /* libApplicationLogic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libApplicationLogic.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C060DA672438998100C993D8 /* MovieDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDataAdapter.swift; sourceTree = "<group>"; };
+		C060DA7524389A9A00C993D8 /* MovieCellContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCellContentView.swift; sourceTree = "<group>"; };
+		C060DA7624389A9A00C993D8 /* MovieOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieOverviewTableViewCell.swift; sourceTree = "<group>"; };
+		C060DA7724389A9A00C993D8 /* MovieImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		C060DA7924389A9A00C993D8 /* MovieDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDataAdapter.swift; sourceTree = "<group>"; };
+		C060DA7A24389A9A00C993D8 /* Interfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interfaces.swift; sourceTree = "<group>"; };
+		C060DA7C24389A9A00C993D8 /* MovieBrowserWireframeImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieBrowserWireframeImp.swift; sourceTree = "<group>"; };
+		C060DA7E24389A9A00C993D8 /* MovieSummaryPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieSummaryPresenterImp.swift; sourceTree = "<group>"; };
+		C060DA7F24389A9A00C993D8 /* MovieDetailPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenterImp.swift; sourceTree = "<group>"; };
+		C060DA8024389A9A00C993D8 /* MovieListPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListPresenterImp.swift; sourceTree = "<group>"; };
+		C060DA8224389A9A00C993D8 /* DiscoverMoviesViewControllerImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverMoviesViewControllerImp.swift; sourceTree = "<group>"; };
+		C060DA9224389B1B00C993D8 /* libExternalInterfaces.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExternalInterfaces.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C060DA9A24389B4700C993D8 /* MovieDatabaseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDatabaseClient.swift; sourceTree = "<group>"; };
+		C060DA9B24389B4700C993D8 /* NetworkShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkShared.swift; sourceTree = "<group>"; };
+		C060DA9C24389B4700C993D8 /* Interfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interfaces.swift; sourceTree = "<group>"; };
+		C060DAA524389C0000C993D8 /* ExternalInterfacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExternalInterfacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C060DAA724389C0000C993D8 /* ExternalInterfacesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalInterfacesTests.swift; sourceTree = "<group>"; };
+		C060DAA924389C0000C993D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C060DAB124389C6000C993D8 /* TestProtocolHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestProtocolHandler.swift; sourceTree = "<group>"; };
+		C060DAB324389C6000C993D8 /* discover_results.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = discover_results.json; sourceTree = "<group>"; };
+		C060DAB424389C6000C993D8 /* MovieDatabaseClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDatabaseClientTests.swift; sourceTree = "<group>"; };
+		C060DAB524389C6000C993D8 /* MovieDatabaseClientTestTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDatabaseClientTestTarget.swift; sourceTree = "<group>"; };
+		C060DAC224389D6100C993D8 /* TestUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TestUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C060DAC424389D6100C993D8 /* TestUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestUtilities.h; sourceTree = "<group>"; };
+		C060DAC524389D6100C993D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C060DACA24389D6100C993D8 /* TestUtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestUtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C060DACF24389D6100C993D8 /* TestUtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtilitiesTests.swift; sourceTree = "<group>"; };
+		C060DAD124389D6100C993D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C060DAD924389D9800C993D8 /* ResourceLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +197,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C060DAA024389B6000C993D8 /* libExternalInterfaces.a in Frameworks */,
+				C060DA692438999200C993D8 /* libApplicationLogic.a in Frameworks */,
+				C060DA5A24388F5500C993D8 /* libBusinessLogic.a in Frameworks */,
+				C060DA4724388BA000C993D8 /* libDomainEntities.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,15 +211,79 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C060DA3824388AB000C993D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DA4924388E9A00C993D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C060DA6A243899D200C993D8 /* libDomainEntities.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DA5C2438988100C993D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C060DA6C243899E200C993D8 /* libDomainEntities.a in Frameworks */,
+				C060DA6B243899DE00C993D8 /* libBusinessLogic.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DA8F24389B1B00C993D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DAA224389C0000C993D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0DE14182438A1CB00E09C97 /* TestUtilities.framework in Frameworks */,
+				C060DADB24389E2900C993D8 /* libApplicationLogic.a in Frameworks */,
+				C060DADC24389E2900C993D8 /* libBusinessLogic.a in Frameworks */,
+				C060DADD24389E2900C993D8 /* libDomainEntities.a in Frameworks */,
+				C060DAAA24389C0000C993D8 /* libExternalInterfaces.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DABF24389D6100C993D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DAC724389D6100C993D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C060DACB24389D6100C993D8 /* TestUtilities.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		C060DA0924388A7900C993D8 = {
 			isa = PBXGroup;
 			children = (
+				C060DA8D24389AEE00C993D8 /* Tests */,
 				C060DA1424388A7900C993D8 /* ViperMovieDemo */,
 				C060DA2B24388A7A00C993D8 /* ViperMovieDemoTests */,
+				C060DA3C24388AB000C993D8 /* DomainEntities */,
+				C060DA4D24388E9A00C993D8 /* BusinessLogic */,
+				C060DA602438988100C993D8 /* ApplicationLogic */,
+				C060DA9324389B1B00C993D8 /* ExternalInterfaces */,
 				C060DA1324388A7900C993D8 /* Products */,
+				C060DA4624388BA000C993D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +292,13 @@
 			children = (
 				C060DA1224388A7900C993D8 /* ViperMovieDemo.app */,
 				C060DA2824388A7A00C993D8 /* ViperMovieDemoTests.xctest */,
+				C060DA3B24388AB000C993D8 /* libDomainEntities.a */,
+				C060DA4C24388E9A00C993D8 /* libBusinessLogic.a */,
+				C060DA5F2438988100C993D8 /* libApplicationLogic.a */,
+				C060DA9224389B1B00C993D8 /* libExternalInterfaces.a */,
+				C060DAA524389C0000C993D8 /* ExternalInterfacesTests.xctest */,
+				C060DAC224389D6100C993D8 /* TestUtilities.framework */,
+				C060DACA24389D6100C993D8 /* TestUtilitiesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,6 +306,7 @@
 		C060DA1424388A7900C993D8 /* ViperMovieDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C060DA5324388EB600C993D8 /* ViperMovieDemo.entitlements */,
 				C060DA1524388A7900C993D8 /* AppDelegate.swift */,
 				C060DA1724388A7900C993D8 /* SceneDelegate.swift */,
 				C060DA1924388A7900C993D8 /* ViewController.swift */,
@@ -99,7 +327,194 @@
 			path = ViperMovieDemoTests;
 			sourceTree = "<group>";
 		};
+		C060DA3C24388AB000C993D8 /* DomainEntities */ = {
+			isa = PBXGroup;
+			children = (
+				C060DA4324388B4900C993D8 /* GenericResult.swift */,
+				C060DA4224388B4800C993D8 /* Movie.swift */,
+			);
+			path = DomainEntities;
+			sourceTree = "<group>";
+		};
+		C060DA4624388BA000C993D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C060DA4D24388E9A00C993D8 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				C060DA5524388F3000C993D8 /* Interfaces.swift */,
+				C060DA5424388F3000C993D8 /* MovieDetailInteractorImp.swift */,
+				C060DA5624388F3000C993D8 /* MovieListInteractorImp.swift */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		C060DA602438988100C993D8 /* ApplicationLogic */ = {
+			isa = PBXGroup;
+			children = (
+				C060DA7A24389A9A00C993D8 /* Interfaces.swift */,
+				C060DA662438998100C993D8 /* Network */,
+				C060DA7824389A9A00C993D8 /* Network */,
+				C060DA7D24389A9A00C993D8 /* Presenters */,
+				C060DA7B24389A9A00C993D8 /* Routers */,
+				C060DA8124389A9A00C993D8 /* ViewControllers */,
+				C060DA7324389A9A00C993D8 /* Views */,
+			);
+			path = ApplicationLogic;
+			sourceTree = "<group>";
+		};
+		C060DA662438998100C993D8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C060DA672438998100C993D8 /* MovieDataAdapter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C060DA7324389A9A00C993D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C060DA7424389A9A00C993D8 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C060DA7424389A9A00C993D8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C060DA7524389A9A00C993D8 /* MovieCellContentView.swift */,
+				C060DA7624389A9A00C993D8 /* MovieOverviewTableViewCell.swift */,
+				C060DA7724389A9A00C993D8 /* MovieImageCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C060DA7824389A9A00C993D8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C060DA7924389A9A00C993D8 /* MovieDataAdapter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C060DA7B24389A9A00C993D8 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				C060DA7C24389A9A00C993D8 /* MovieBrowserWireframeImp.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		C060DA7D24389A9A00C993D8 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				C060DA7E24389A9A00C993D8 /* MovieSummaryPresenterImp.swift */,
+				C060DA7F24389A9A00C993D8 /* MovieDetailPresenterImp.swift */,
+				C060DA8024389A9A00C993D8 /* MovieListPresenterImp.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		C060DA8124389A9A00C993D8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C060DA8224389A9A00C993D8 /* DiscoverMoviesViewControllerImp.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C060DA8D24389AEE00C993D8 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C060DAC324389D6100C993D8 /* TestUtilities */,
+				C060DACE24389D6100C993D8 /* TestUtilitiesTests */,
+				C060DAA624389C0000C993D8 /* ExternalInterfacesTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		C060DA9324389B1B00C993D8 /* ExternalInterfaces */ = {
+			isa = PBXGroup;
+			children = (
+				C060DA9C24389B4700C993D8 /* Interfaces.swift */,
+				C060DA9924389B4700C993D8 /* Network */,
+			);
+			path = ExternalInterfaces;
+			sourceTree = "<group>";
+		};
+		C060DA9924389B4700C993D8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C060DA9A24389B4700C993D8 /* MovieDatabaseClient.swift */,
+				C060DA9B24389B4700C993D8 /* NetworkShared.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C060DAA624389C0000C993D8 /* ExternalInterfacesTests */ = {
+			isa = PBXGroup;
+			children = (
+				C060DAB024389C6000C993D8 /* Network */,
+				C060DAA724389C0000C993D8 /* ExternalInterfacesTests.swift */,
+				C060DAA924389C0000C993D8 /* Info.plist */,
+			);
+			path = ExternalInterfacesTests;
+			sourceTree = "<group>";
+		};
+		C060DAB024389C6000C993D8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C060DAB124389C6000C993D8 /* TestProtocolHandler.swift */,
+				C060DAB224389C6000C993D8 /* Resources */,
+				C060DAB424389C6000C993D8 /* MovieDatabaseClientTests.swift */,
+				C060DAB524389C6000C993D8 /* MovieDatabaseClientTestTarget.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C060DAB224389C6000C993D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C060DAB324389C6000C993D8 /* discover_results.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C060DAC324389D6100C993D8 /* TestUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				C060DAD924389D9800C993D8 /* ResourceLoader.swift */,
+				C060DAC424389D6100C993D8 /* TestUtilities.h */,
+				C060DAC524389D6100C993D8 /* Info.plist */,
+			);
+			path = TestUtilities;
+			sourceTree = "<group>";
+		};
+		C060DACE24389D6100C993D8 /* TestUtilitiesTests */ = {
+			isa = PBXGroup;
+			children = (
+				C060DACF24389D6100C993D8 /* TestUtilitiesTests.swift */,
+				C060DAD124389D6100C993D8 /* Info.plist */,
+			);
+			path = TestUtilitiesTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C060DABD24389D6100C993D8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C060DAD224389D6100C993D8 /* TestUtilities.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		C060DA1124388A7900C993D8 /* ViperMovieDemo */ = {
@@ -137,6 +552,131 @@
 			productReference = C060DA2824388A7A00C993D8 /* ViperMovieDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C060DA3A24388AB000C993D8 /* DomainEntities */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C060DA3F24388AB000C993D8 /* Build configuration list for PBXNativeTarget "DomainEntities" */;
+			buildPhases = (
+				C060DA3724388AB000C993D8 /* Sources */,
+				C060DA3824388AB000C993D8 /* Frameworks */,
+				C060DA3924388AB000C993D8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DomainEntities;
+			productName = DomainEntities;
+			productReference = C060DA3B24388AB000C993D8 /* libDomainEntities.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C060DA4B24388E9A00C993D8 /* BusinessLogic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C060DA5024388E9A00C993D8 /* Build configuration list for PBXNativeTarget "BusinessLogic" */;
+			buildPhases = (
+				C060DA4824388E9A00C993D8 /* Sources */,
+				C060DA4924388E9A00C993D8 /* Frameworks */,
+				C060DA4A24388E9A00C993D8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C060DA6E24389A0100C993D8 /* PBXTargetDependency */,
+			);
+			name = BusinessLogic;
+			productName = BusinessLogic;
+			productReference = C060DA4C24388E9A00C993D8 /* libBusinessLogic.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C060DA5E2438988100C993D8 /* ApplicationLogic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C060DA632438988100C993D8 /* Build configuration list for PBXNativeTarget "ApplicationLogic" */;
+			buildPhases = (
+				C060DA5B2438988100C993D8 /* Sources */,
+				C060DA5C2438988100C993D8 /* Frameworks */,
+				C060DA5D2438988100C993D8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C060DA7024389A0700C993D8 /* PBXTargetDependency */,
+				C060DA7224389A0700C993D8 /* PBXTargetDependency */,
+			);
+			name = ApplicationLogic;
+			productName = ApplicationLogic;
+			productReference = C060DA5F2438988100C993D8 /* libApplicationLogic.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C060DA9124389B1B00C993D8 /* ExternalInterfaces */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C060DA9624389B1B00C993D8 /* Build configuration list for PBXNativeTarget "ExternalInterfaces" */;
+			buildPhases = (
+				C060DA8E24389B1B00C993D8 /* Sources */,
+				C060DA8F24389B1B00C993D8 /* Frameworks */,
+				C060DA9024389B1B00C993D8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExternalInterfaces;
+			productName = ExternalInterfaces;
+			productReference = C060DA9224389B1B00C993D8 /* libExternalInterfaces.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C060DAA424389C0000C993D8 /* ExternalInterfacesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C060DAAD24389C0000C993D8 /* Build configuration list for PBXNativeTarget "ExternalInterfacesTests" */;
+			buildPhases = (
+				C060DAA124389C0000C993D8 /* Sources */,
+				C060DAA224389C0000C993D8 /* Frameworks */,
+				C060DAA324389C0000C993D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C060DAAC24389C0000C993D8 /* PBXTargetDependency */,
+			);
+			name = ExternalInterfacesTests;
+			productName = ExternalInterfacesTests;
+			productReference = C060DAA524389C0000C993D8 /* ExternalInterfacesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C060DAC124389D6100C993D8 /* TestUtilities */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C060DAD324389D6100C993D8 /* Build configuration list for PBXNativeTarget "TestUtilities" */;
+			buildPhases = (
+				C060DABD24389D6100C993D8 /* Headers */,
+				C060DABE24389D6100C993D8 /* Sources */,
+				C060DABF24389D6100C993D8 /* Frameworks */,
+				C060DAC024389D6100C993D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestUtilities;
+			productName = TestUtilities;
+			productReference = C060DAC224389D6100C993D8 /* TestUtilities.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C060DAC924389D6100C993D8 /* TestUtilitiesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C060DAD624389D6100C993D8 /* Build configuration list for PBXNativeTarget "TestUtilitiesTests" */;
+			buildPhases = (
+				C060DAC624389D6100C993D8 /* Sources */,
+				C060DAC724389D6100C993D8 /* Frameworks */,
+				C060DAC824389D6100C993D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C060DACD24389D6100C993D8 /* PBXTargetDependency */,
+			);
+			name = TestUtilitiesTests;
+			productName = TestUtilitiesTests;
+			productReference = C060DACA24389D6100C993D8 /* TestUtilitiesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -153,6 +693,28 @@
 					C060DA2724388A7A00C993D8 = {
 						CreatedOnToolsVersion = 11.4;
 						TestTargetID = C060DA1124388A7900C993D8;
+					};
+					C060DA3A24388AB000C993D8 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					C060DA4B24388E9A00C993D8 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					C060DA5E2438988100C993D8 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					C060DA9124389B1B00C993D8 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					C060DAA424389C0000C993D8 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					C060DAC124389D6100C993D8 = {
+						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
+					};
+					C060DAC924389D6100C993D8 = {
+						CreatedOnToolsVersion = 11.4;
 					};
 				};
 			};
@@ -171,6 +733,13 @@
 			targets = (
 				C060DA1124388A7900C993D8 /* ViperMovieDemo */,
 				C060DA2724388A7A00C993D8 /* ViperMovieDemoTests */,
+				C060DA3A24388AB000C993D8 /* DomainEntities */,
+				C060DA4B24388E9A00C993D8 /* BusinessLogic */,
+				C060DA5E2438988100C993D8 /* ApplicationLogic */,
+				C060DA9124389B1B00C993D8 /* ExternalInterfaces */,
+				C060DAA424389C0000C993D8 /* ExternalInterfacesTests */,
+				C060DAC124389D6100C993D8 /* TestUtilities */,
+				C060DAC924389D6100C993D8 /* TestUtilitiesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +756,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C060DA2624388A7A00C993D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DAA324389C0000C993D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C060DABB24389CF900C993D8 /* discover_results.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DAC024389D6100C993D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DAC824389D6100C993D8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -214,6 +805,80 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C060DA3724388AB000C993D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C060DA4424388B4900C993D8 /* Movie.swift in Sources */,
+				C060DA4524388B4900C993D8 /* GenericResult.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DA4824388E9A00C993D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C060DA5924388F3000C993D8 /* MovieListInteractorImp.swift in Sources */,
+				C060DA5824388F3000C993D8 /* Interfaces.swift in Sources */,
+				C060DA5724388F3000C993D8 /* MovieDetailInteractorImp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DA5B2438988100C993D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C060DA8324389A9A00C993D8 /* MovieCellContentView.swift in Sources */,
+				C060DA8B24389A9A00C993D8 /* MovieListPresenterImp.swift in Sources */,
+				C060DA682438998200C993D8 /* MovieDataAdapter.swift in Sources */,
+				C060DA8524389A9A00C993D8 /* MovieImageCollectionViewCell.swift in Sources */,
+				C060DA8424389A9A00C993D8 /* MovieOverviewTableViewCell.swift in Sources */,
+				C060DA8724389A9A00C993D8 /* Interfaces.swift in Sources */,
+				C060DA8A24389A9A00C993D8 /* MovieDetailPresenterImp.swift in Sources */,
+				C060DA8824389A9A00C993D8 /* MovieBrowserWireframeImp.swift in Sources */,
+				C060DA8624389A9A00C993D8 /* MovieDataAdapter.swift in Sources */,
+				C060DA8924389A9A00C993D8 /* MovieSummaryPresenterImp.swift in Sources */,
+				C060DA8C24389A9A00C993D8 /* DiscoverMoviesViewControllerImp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DA8E24389B1B00C993D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C060DA9D24389B4700C993D8 /* MovieDatabaseClient.swift in Sources */,
+				C060DA9E24389B4700C993D8 /* NetworkShared.swift in Sources */,
+				C060DA9F24389B4700C993D8 /* Interfaces.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DAA124389C0000C993D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C060DAB924389CF100C993D8 /* TestProtocolHandler.swift in Sources */,
+				C060DABC24389CFE00C993D8 /* MovieDatabaseClientTestTarget.swift in Sources */,
+				C060DABA24389CF500C993D8 /* MovieDatabaseClientTests.swift in Sources */,
+				C060DAA824389C0000C993D8 /* ExternalInterfacesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DABE24389D6100C993D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C060DADA24389D9800C993D8 /* ResourceLoader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C060DAC624389D6100C993D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C060DAD024389D6100C993D8 /* TestUtilitiesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -221,6 +886,31 @@
 			isa = PBXTargetDependency;
 			target = C060DA1124388A7900C993D8 /* ViperMovieDemo */;
 			targetProxy = C060DA2924388A7A00C993D8 /* PBXContainerItemProxy */;
+		};
+		C060DA6E24389A0100C993D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C060DA3A24388AB000C993D8 /* DomainEntities */;
+			targetProxy = C060DA6D24389A0100C993D8 /* PBXContainerItemProxy */;
+		};
+		C060DA7024389A0700C993D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C060DA4B24388E9A00C993D8 /* BusinessLogic */;
+			targetProxy = C060DA6F24389A0700C993D8 /* PBXContainerItemProxy */;
+		};
+		C060DA7224389A0700C993D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C060DA3A24388AB000C993D8 /* DomainEntities */;
+			targetProxy = C060DA7124389A0700C993D8 /* PBXContainerItemProxy */;
+		};
+		C060DAAC24389C0000C993D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C060DA9124389B1B00C993D8 /* ExternalInterfaces */;
+			targetProxy = C060DAAB24389C0000C993D8 /* PBXContainerItemProxy */;
+		};
+		C060DACD24389D6100C993D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C060DAC124389D6100C993D8 /* TestUtilities */;
+			targetProxy = C060DACC24389D6100C993D8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -362,6 +1052,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ViperMovieDemo/ViperMovieDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3VP86DSRS;
 				INFOPLIST_FILE = ViperMovieDemo/Info.plist;
@@ -371,6 +1062,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.basilsalad.viper-movie-demo.ViperMovieDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -380,6 +1072,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ViperMovieDemo/ViperMovieDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3VP86DSRS;
 				INFOPLIST_FILE = ViperMovieDemo/Info.plist;
@@ -389,6 +1082,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.basilsalad.viper-movie-demo.ViperMovieDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -438,6 +1132,259 @@
 			};
 			name = Release;
 		};
+		C060DA4024388AB000C993D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F3VP86DSRS;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C060DA4124388AB000C993D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F3VP86DSRS;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C060DA5124388E9A00C993D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F3VP86DSRS;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C060DA5224388E9A00C993D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F3VP86DSRS;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C060DA642438988100C993D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F3VP86DSRS;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C060DA652438988100C993D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F3VP86DSRS;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C060DA9724389B1B00C993D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F3VP86DSRS;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C060DA9824389B1B00C993D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F3VP86DSRS;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C060DAAE24389C0000C993D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F3VP86DSRS;
+				INFOPLIST_FILE = Tests/ExternalInterfacesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.basilsalad.viper-movie-demo.ExternalInterfacesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C060DAAF24389C0000C993D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F3VP86DSRS;
+				INFOPLIST_FILE = Tests/ExternalInterfacesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.basilsalad.viper-movie-demo.ExternalInterfacesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C060DAD424389D6100C993D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F3VP86DSRS;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Tests/TestUtilities/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					XCTest,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.basilsalad.viper-movie-demo.TestUtilities";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C060DAD524389D6100C993D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F3VP86DSRS;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Tests/TestUtilities/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					XCTest,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.basilsalad.viper-movie-demo.TestUtilities";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C060DAD724389D6100C993D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F3VP86DSRS;
+				INFOPLIST_FILE = Tests/TestUtilitiesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.basilsalad.viper-movie-demo.TestUtilitiesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C060DAD824389D6100C993D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F3VP86DSRS;
+				INFOPLIST_FILE = Tests/TestUtilitiesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.basilsalad.viper-movie-demo.TestUtilitiesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -464,6 +1411,69 @@
 			buildConfigurations = (
 				C060DA3524388A7A00C993D8 /* Debug */,
 				C060DA3624388A7A00C993D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C060DA3F24388AB000C993D8 /* Build configuration list for PBXNativeTarget "DomainEntities" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C060DA4024388AB000C993D8 /* Debug */,
+				C060DA4124388AB000C993D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C060DA5024388E9A00C993D8 /* Build configuration list for PBXNativeTarget "BusinessLogic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C060DA5124388E9A00C993D8 /* Debug */,
+				C060DA5224388E9A00C993D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C060DA632438988100C993D8 /* Build configuration list for PBXNativeTarget "ApplicationLogic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C060DA642438988100C993D8 /* Debug */,
+				C060DA652438988100C993D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C060DA9624389B1B00C993D8 /* Build configuration list for PBXNativeTarget "ExternalInterfaces" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C060DA9724389B1B00C993D8 /* Debug */,
+				C060DA9824389B1B00C993D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C060DAAD24389C0000C993D8 /* Build configuration list for PBXNativeTarget "ExternalInterfacesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C060DAAE24389C0000C993D8 /* Debug */,
+				C060DAAF24389C0000C993D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C060DAD324389D6100C993D8 /* Build configuration list for PBXNativeTarget "TestUtilities" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C060DAD424389D6100C993D8 /* Debug */,
+				C060DAD524389D6100C993D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C060DAD624389D6100C993D8 /* Build configuration list for PBXNativeTarget "TestUtilitiesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C060DAD724389D6100C993D8 /* Debug */,
+				C060DAD824389D6100C993D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
