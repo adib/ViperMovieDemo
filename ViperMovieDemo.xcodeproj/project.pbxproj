@@ -42,7 +42,6 @@
 		C060DAA024389B6000C993D8 /* libExternalInterfaces.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA9224389B1B00C993D8 /* libExternalInterfaces.a */; };
 		C060DAA824389C0000C993D8 /* ExternalInterfacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DAA724389C0000C993D8 /* ExternalInterfacesTests.swift */; };
 		C060DAAA24389C0000C993D8 /* libExternalInterfaces.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA9224389B1B00C993D8 /* libExternalInterfaces.a */; };
-		C060DAB924389CF100C993D8 /* TestProtocolHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DAB124389C6000C993D8 /* TestProtocolHandler.swift */; };
 		C060DABA24389CF500C993D8 /* MovieDatabaseClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DAB424389C6000C993D8 /* MovieDatabaseClientTests.swift */; };
 		C060DABB24389CF900C993D8 /* discover_results.json in Resources */ = {isa = PBXBuildFile; fileRef = C060DAB324389C6000C993D8 /* discover_results.json */; };
 		C060DABC24389CFE00C993D8 /* MovieDatabaseClientTestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DAB524389C6000C993D8 /* MovieDatabaseClientTestTarget.swift */; };
@@ -54,6 +53,7 @@
 		C060DADC24389E2900C993D8 /* libBusinessLogic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA4C24388E9A00C993D8 /* libBusinessLogic.a */; };
 		C060DADD24389E2900C993D8 /* libDomainEntities.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA3B24388AB000C993D8 /* libDomainEntities.a */; };
 		C0DE14182438A1CB00E09C97 /* TestUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DAC224389D6100C993D8 /* TestUtilities.framework */; };
+		C0DE141A2438A25300E09C97 /* TestProtocolHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DAB124389C6000C993D8 /* TestProtocolHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -468,7 +468,6 @@
 		C060DAB024389C6000C993D8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				C060DAB124389C6000C993D8 /* TestProtocolHandler.swift */,
 				C060DAB224389C6000C993D8 /* Resources */,
 				C060DAB424389C6000C993D8 /* MovieDatabaseClientTests.swift */,
 				C060DAB524389C6000C993D8 /* MovieDatabaseClientTestTarget.swift */,
@@ -487,6 +486,7 @@
 		C060DAC324389D6100C993D8 /* TestUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				C060DAB124389C6000C993D8 /* TestProtocolHandler.swift */,
 				C060DAD924389D9800C993D8 /* ResourceLoader.swift */,
 				C060DAC424389D6100C993D8 /* TestUtilities.h */,
 				C060DAC524389D6100C993D8 /* Info.plist */,
@@ -856,7 +856,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C060DAB924389CF100C993D8 /* TestProtocolHandler.swift in Sources */,
 				C060DABC24389CFE00C993D8 /* MovieDatabaseClientTestTarget.swift in Sources */,
 				C060DABA24389CF500C993D8 /* MovieDatabaseClientTests.swift in Sources */,
 				C060DAA824389C0000C993D8 /* ExternalInterfacesTests.swift in Sources */,
@@ -867,6 +866,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0DE141A2438A25300E09C97 /* TestProtocolHandler.swift in Sources */,
 				C060DADA24389D9800C993D8 /* ResourceLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

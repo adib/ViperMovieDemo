@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import ApplicationLogic
-@testable import ExternalInterfaces
 
-class LocalResourcesTestProtocolHandler: URLProtocol {
+
+public class LocalResourcesTestProtocolHandler: URLProtocol {
     
     public enum ErrorCode: Int {
         case noError
@@ -90,7 +89,7 @@ class LocalResourcesTestProtocolHandler: URLProtocol {
             guard let mapped = type(of: self).classLockQueue.sync(execute:{
                 type(of: self).resourceMappings[key]
             }) else {
-                let errorResponse = HTTPURLResponse(url: requestURL, statusCode: HTTPStatusCode.notFound.rawValue, httpVersion: self.httpVersion, headerFields: nil)!
+                let errorResponse = HTTPURLResponse(url: requestURL, statusCode: 404, httpVersion: self.httpVersion, headerFields: nil)!
                 let emptyData = Data()
                 self.delegateQueue.async {
                     client.urlProtocol(self, didReceive: errorResponse, cacheStoragePolicy: .notAllowed)
@@ -104,7 +103,7 @@ class LocalResourcesTestProtocolHandler: URLProtocol {
                 let headerFields = [
                     "Content-Type": mapped.mimeType
                 ]
-                let successResponse = HTTPURLResponse(url: requestURL, statusCode: HTTPStatusCode.okay.rawValue, httpVersion: self.httpVersion, headerFields: headerFields)!
+                let successResponse = HTTPURLResponse(url: requestURL, statusCode: 200, httpVersion: self.httpVersion, headerFields: headerFields)!
                 self.delegateQueue.async {
                     client.urlProtocol(self, didReceive: successResponse, cacheStoragePolicy: .allowedInMemoryOnly)
                     client.urlProtocol(self, didLoad: data)
@@ -114,7 +113,7 @@ class LocalResourcesTestProtocolHandler: URLProtocol {
                 let headerFields = [
                     "Content-Type": "text/plain"
                 ]
-                let errorResponse = HTTPURLResponse(url: requestURL, statusCode: HTTPStatusCode.notFound.rawValue, httpVersion: self.httpVersion, headerFields: headerFields)!
+                let errorResponse = HTTPURLResponse(url: requestURL, statusCode: 404, httpVersion: self.httpVersion, headerFields: headerFields)!
                 self.delegateQueue.async {
                     client.urlProtocol(self, didReceive: errorResponse, cacheStoragePolicy: .notAllowed)
                 }
