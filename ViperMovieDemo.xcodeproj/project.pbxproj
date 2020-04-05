@@ -27,9 +27,7 @@
 		C060DA6A243899D200C993D8 /* libDomainEntities.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA3B24388AB000C993D8 /* libDomainEntities.a */; };
 		C060DA6B243899DE00C993D8 /* libBusinessLogic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA4C24388E9A00C993D8 /* libBusinessLogic.a */; };
 		C060DA6C243899E200C993D8 /* libDomainEntities.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA3B24388AB000C993D8 /* libDomainEntities.a */; };
-		C060DA8324389A9A00C993D8 /* MovieCellContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7524389A9A00C993D8 /* MovieCellContentView.swift */; };
-		C060DA8424389A9A00C993D8 /* MovieOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7624389A9A00C993D8 /* MovieOverviewTableViewCell.swift */; };
-		C060DA8524389A9A00C993D8 /* MovieImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7724389A9A00C993D8 /* MovieImageCollectionViewCell.swift */; };
+		C060DA8424389A9A00C993D8 /* MovieOverviewTableViewCellImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7624389A9A00C993D8 /* MovieOverviewTableViewCellImp.swift */; };
 		C060DA8624389A9A00C993D8 /* MovieDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7924389A9A00C993D8 /* MovieDataAdapter.swift */; };
 		C060DA8724389A9A00C993D8 /* Interfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7A24389A9A00C993D8 /* Interfaces.swift */; };
 		C060DA8824389A9A00C993D8 /* MovieBrowserWireframeImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7C24389A9A00C993D8 /* MovieBrowserWireframeImp.swift */; };
@@ -162,9 +160,7 @@
 		C060DA5524388F3000C993D8 /* Interfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interfaces.swift; sourceTree = "<group>"; };
 		C060DA5624388F3000C993D8 /* MovieListInteractorImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListInteractorImp.swift; sourceTree = "<group>"; };
 		C060DA5F2438988100C993D8 /* libApplicationLogic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libApplicationLogic.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C060DA7524389A9A00C993D8 /* MovieCellContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCellContentView.swift; sourceTree = "<group>"; };
-		C060DA7624389A9A00C993D8 /* MovieOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieOverviewTableViewCell.swift; sourceTree = "<group>"; };
-		C060DA7724389A9A00C993D8 /* MovieImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		C060DA7624389A9A00C993D8 /* MovieOverviewTableViewCellImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieOverviewTableViewCellImp.swift; sourceTree = "<group>"; };
 		C060DA7924389A9A00C993D8 /* MovieDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDataAdapter.swift; sourceTree = "<group>"; };
 		C060DA7A24389A9A00C993D8 /* Interfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interfaces.swift; sourceTree = "<group>"; };
 		C060DA7C24389A9A00C993D8 /* MovieBrowserWireframeImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieBrowserWireframeImp.swift; sourceTree = "<group>"; };
@@ -377,9 +373,7 @@
 		C060DA7424389A9A00C993D8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				C060DA7524389A9A00C993D8 /* MovieCellContentView.swift */,
-				C060DA7624389A9A00C993D8 /* MovieOverviewTableViewCell.swift */,
-				C060DA7724389A9A00C993D8 /* MovieImageCollectionViewCell.swift */,
+				C060DA7624389A9A00C993D8 /* MovieOverviewTableViewCellImp.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -819,11 +813,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C060DA8324389A9A00C993D8 /* MovieCellContentView.swift in Sources */,
 				C04EF4862439C1D500355CB8 /* MovieDetailViewControllerImp.swift in Sources */,
 				C060DA8B24389A9A00C993D8 /* MovieListPresenterImp.swift in Sources */,
-				C060DA8524389A9A00C993D8 /* MovieImageCollectionViewCell.swift in Sources */,
-				C060DA8424389A9A00C993D8 /* MovieOverviewTableViewCell.swift in Sources */,
+				C060DA8424389A9A00C993D8 /* MovieOverviewTableViewCellImp.swift in Sources */,
 				C060DA8724389A9A00C993D8 /* Interfaces.swift in Sources */,
 				C060DA8A24389A9A00C993D8 /* MovieDetailPresenterImp.swift in Sources */,
 				C060DA8824389A9A00C993D8 /* MovieBrowserWireframeImp.swift in Sources */,
