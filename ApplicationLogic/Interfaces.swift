@@ -31,7 +31,8 @@ public protocol MovieListPresenter: class {
     func configureCell(_ cell: MovieSummaryPresenterOutput, forItemAt: Int)
     func loadInitialItems()
     func loadMoreItems()
-    func showDetailOfItem(at indePx: Int)
+    func showDetailOfItem(at indexPath: Int)
+    var loadBatchSize: Int { get set }
 }
 
 

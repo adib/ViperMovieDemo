@@ -12,6 +12,7 @@ import BusinessLogic
 
 class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
     
+    
     var movieSummary = [MovieSummaryPresenter]()
     var filter = ListMoviesFilter()
     weak var output: MovieListPresenterOutput?
@@ -41,6 +42,15 @@ class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
             movieSummary.count
         }
     }
+    
+    var loadBatchSize: Int = 1 {
+        didSet {
+            if loadBatchSize >= 1 {
+                interactor.fetchPageSize = loadBatchSize
+            }
+        }
+    }
+
     
     func configureCell(_ cell: MovieSummaryPresenterOutput, forItemAt index: Int) {
         let presenter = movieSummary[index]
