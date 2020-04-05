@@ -15,7 +15,7 @@ import DomainEntities
 
 
 public protocol MovieBrowserWireframe: class {
-    func makeInitialRootViewController() -> UIViewController
+    var rootViewController: UIViewController { get }
     func present(movieDetail: MovieDetailPresenter, from: UIViewController)
 }
 
@@ -67,6 +67,11 @@ public protocol MovieSummaryPresenterOutput: class {
 
 
 // MARK: View Controllers
+
+
+protocol DetailViewController: UIViewController {
+    var isEmpty: Bool { get }
+}
 
 
 // MARK: - Network

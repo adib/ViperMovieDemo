@@ -16,7 +16,7 @@ class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
     var filter = ListMoviesFilter()
     weak var output: MovieListPresenterOutput?
     
-    let wireframe: MovieBrowserWireframe
+    weak var wireframe: MovieBrowserWireframe?
     
     let interactor: MovieListInteractor
     
@@ -48,13 +48,13 @@ class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
     }
         
     func showDetailOfItem(at index: Int) {
-        guard let ctrl = output else {
+        guard let wireframe = self.wireframe, let output = self.output else {
             return
         }
         let item = movieSummary[index]
         let subInteractor = interactor.makeDetailInteractor(for: item.movieSummary)
         let subPresenter = MovieDetailPresenterImp(wireframe: wireframe, interactor: subInteractor)
-        wireframe.present(movieDetail: subPresenter, from: ctrl)
+        wireframe.present(movieDetail: subPresenter, from: output)
     }
 
     // MARK: MovieListInteractorOutput
