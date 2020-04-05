@@ -29,7 +29,6 @@ public protocol MovieListInteractor: MovieInteractor {
     
     func fetchNextPage()
     
-        
     func makeDetailInteractor(for: MovieSummary) -> MovieDetailInteractor
     
 }
@@ -56,7 +55,7 @@ public struct ListMoviesFilter {
 }
 
 
-public func makeListMoviesInteractor() -> MovieListInteractor {
+public func createMovieListInteractor() -> MovieListInteractor {
     ListMoviesInteractorImp()
 }
 
