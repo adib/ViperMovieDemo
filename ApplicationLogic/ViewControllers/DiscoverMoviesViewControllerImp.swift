@@ -15,7 +15,7 @@ class DiscoverMoviesViewControllerImp: UITableViewController, MovieListPresenter
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(MovieOverviewTableViewCellImp.classForCoder(), forCellReuseIdentifier: movieCellIdentifier)
-        self.tableView.rowHeight = 120
+        self.tableView.rowHeight = 44
         if let p = presenter {
             p.loadInitialItems()
         }
