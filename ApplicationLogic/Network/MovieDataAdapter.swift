@@ -13,12 +13,13 @@ import BusinessLogic
 
 class MovieDataAdapter: MovieDataStore {    
     
-    var lastFetchCount = 20
+    var lastFetchCount: Int
     
     let dataSource: MovieDataProvider
     
     init(dataSource: MovieDataProvider) {
         self.dataSource = dataSource
+        lastFetchCount = dataSource.defaultPageSize
     }
     
     let syncQueue = DispatchQueue(label: "MovieDataAdapter-sync")
@@ -32,13 +33,12 @@ class MovieDataAdapter: MovieDataStore {
         let totalPages = lastPageNumber - firstPageNumber + 1
         return (firstPageNumber, lastPageNumber, firstPageSkip, lastPageCount, totalPages)
     }
+    
     // MARK: MovieDataStore
     
     func fetchMovieSummary(filter: ListMoviesFilter, fetchOffset: Int, fetchLimit: Int, resultReceiver: @escaping (Result<[MovieSummary]>) -> Void) {
         let (firstPageNumber, lastPageNumber, firstPageSkip, lastPageCount, totalPages) = calculatePagination(fetchOffset: fetchOffset, fetchLimit: fetchLimit)
         var fetchResultByPageNumber = Dictionary<Int, Result<MovieSummaryResult> >()
-        fetchResultByPageNumber.reserveCapacity(totalPages)
-        
         fetchResultByPageNumber.reserveCapacity(totalPages)
         let checkCompletion = {
             guard fetchResultByPageNumber.count >= totalPages else {

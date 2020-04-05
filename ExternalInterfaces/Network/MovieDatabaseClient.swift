@@ -55,6 +55,12 @@ class MovieDatabaseClient: MovieDataProvider {
     
     // MARK: - MovieDataProvider
     
+    var defaultPageSize: Int {
+        get {
+            20
+        }
+    }
+    
     func discoverMovies(pageNumber: Int?, resultReceiver: @escaping (Result<MovieSummaryResult>) -> Void) {
         var queryItems = [
             URLQueryItem(name:"sort_by", value:"popularity.desc")

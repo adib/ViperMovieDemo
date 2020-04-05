@@ -87,6 +87,7 @@ public protocol MovieSummaryResult {
 
 
 public protocol MovieDataProvider {
+    var defaultPageSize: Int { get }
     func discoverMovies(pageNumber: Int?, resultReceiver: @escaping ( _ : Result<MovieSummaryResult>) -> Void )
 }
 
