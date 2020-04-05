@@ -29,6 +29,12 @@ class MovieBrowserWireframeImp: MovieBrowserWireframe, UISplitViewControllerDele
         topNavItem.leftItemsSupplementBackButton = true
     }
     
+    func createMovieDetailViewController(presenter: MovieDetailPresenter) -> UIViewController {
+        let detailCtrl = MovieDetailViewControllerImp()
+        detailCtrl.presenter = presenter
+        return detailCtrl
+    }
+
 
     // MARK: - MovieBrowserWireframe
 
@@ -62,10 +68,10 @@ class MovieBrowserWireframeImp: MovieBrowserWireframe, UISplitViewControllerDele
     }
 
     func present(movieDetail: MovieDetailPresenter, from sourceVC: UIViewController) {
-        let detailCtrl = MovieDetailViewControllerImp()
-        detailCtrl.presenter = movieDetail
-        sourceVC.showDetailViewController(detailCtrl, sender: sourceVC)
+        let ctrl = createMovieDetailViewController(presenter: movieDetail)
+        sourceVC.showDetailViewController(ctrl, sender: sourceVC)
     }
+    
 
     // MARK: - UISplitViewControllerDelegate
 

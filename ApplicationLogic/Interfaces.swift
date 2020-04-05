@@ -19,7 +19,7 @@ public protocol MovieBrowserWireframe: class {
     func present(movieDetail: MovieDetailPresenter, from: UIViewController)
 }
 
-public func makeMovieBrowserWireframe(dataProvider: MovieDataProvider) -> MovieBrowserWireframe {
+public func createMovieBrowserWireframe(dataProvider: MovieDataProvider) -> MovieBrowserWireframe {
     MovieBrowserWireframeImp(dataProvider: dataProvider)
 }
 
