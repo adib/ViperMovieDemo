@@ -11,10 +11,12 @@ import DomainEntities
 
 class ListMoviesInteractorImp: MovieListInteractor {
     
-    
     var currentFilter = ListMoviesFilter()
+
+    var currentFetchOffset = 0
     
-    var currentPage = UInt(1)
+    var lastFetchCount: Int?
+    
     var atLastPage = false
     
     var dataStore: MovieDataStore?
@@ -29,9 +31,11 @@ class ListMoviesInteractorImp: MovieListInteractor {
         guard let dataProvider = self.dataStore, let delegate = self.output else {
             return
         }
-        dataProvider.fetchMovieSummary(filter: currentFilter, page: currentPage) { (returnValue) in
+        dataProvider.fetchMovieSummary(filter: currentFilter, fetchOffset: currentFetchOffset, fetchLimit: fetchPageSize) {
+            (returnValue) in
             switch returnValue {
             case .success(let result):
+                self.lastFetchCount = result.count
                 if result.count == 0 {
                     self.atLastPage = true
                 }
@@ -48,11 +52,14 @@ class ListMoviesInteractorImp: MovieListInteractor {
         return result
     }
 
-    // MARK: - ShowMoviesOverviewInput
+    // MARK: - MovieListInteractor
+
+    var fetchPageSize = 53
 
     func fetchFirstPage(filter: ListMoviesFilter) {
         currentFilter = filter
-        currentPage = 1
+        currentFetchOffset = 0
+        lastFetchCount = nil
         atLastPage = false
         fetchCurrentPage()
     }
@@ -61,7 +68,7 @@ class ListMoviesInteractorImp: MovieListInteractor {
         guard !atLastPage else {
             return
         }
-        currentPage = currentPage + 1
+        currentFetchOffset += lastFetchCount ?? 0
         fetchCurrentPage()
     }
 }

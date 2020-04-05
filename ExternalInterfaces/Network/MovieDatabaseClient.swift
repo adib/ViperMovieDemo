@@ -55,7 +55,7 @@ class MovieDatabaseClient: MovieDataProvider {
     
     // MARK: - MovieDataProvider
     
-    func discoverMovies(pageNumber: UInt?, resultReceiver: @escaping (Result<MovieSummaryResult>) -> Void) {
+    func discoverMovies(pageNumber: Int?, resultReceiver: @escaping (Result<MovieSummaryResult>) -> Void) {
         var queryItems = [
             URLQueryItem(name:"sort_by", value:"popularity.desc")
         ]

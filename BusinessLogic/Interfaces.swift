@@ -21,11 +21,14 @@ public protocol MovieListInteractor: MovieInteractor {
     
     var output: MovieListInteractorOutput? {get set}
     
+    var fetchPageSize: Int {get set }
+    
     var currentFilter: ListMoviesFilter {get}
     
     func fetchFirstPage(filter: ListMoviesFilter)
     
     func fetchNextPage()
+    
         
     func makeDetailInteractor(for: MovieSummary) -> MovieDetailInteractor
     
@@ -38,10 +41,7 @@ public protocol MovieListInteractorOutput: class {
 
 
 public protocol MovieDataStore: class {
-    func fetchMovieSummary(filter: ListMoviesFilter, page: UInt, resultReceiver: @escaping (Result<[MovieSummary]>) -> Void)
-    func fetchMovieImage(identifier: MovieImageIdentifier, resultReceiver: @escaping (Result<MovieImage>) -> Void)
-    
-    func updateFavorite(movie: MovieIdentifier, isFavorite: Bool, resultReceiver: @escaping (Error?) -> Void)
+    func fetchMovieSummary(filter: ListMoviesFilter, fetchOffset: Int, fetchLimit: Int, resultReceiver: @escaping (Result<[MovieSummary]>) -> Void)
 }
 
 

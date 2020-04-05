@@ -87,7 +87,7 @@ public protocol MovieSummaryResult {
 
 
 public protocol MovieDataProvider {
-    func discoverMovies(pageNumber: UInt?, resultReceiver: @escaping ( _ : Result<MovieSummaryResult>) -> Void )
+    func discoverMovies(pageNumber: Int?, resultReceiver: @escaping ( _ : Result<MovieSummaryResult>) -> Void )
 }
 
 
