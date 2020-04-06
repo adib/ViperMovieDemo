@@ -74,13 +74,35 @@ class MovieDatabaseClient: MovieDataProvider {
             self.jsonQueue.async {
                 guard let jsonDict = try? JSONSerialization.jsonObject(with: receivedData, options: []) as? Dictionary<String,Any> else {
                     failureHandler(NSError(code: .dataParseError))
-
                     return
                 }
                 successHandler(jsonDict)
             }
         }
         task.resume()
+    }
+    
+    func getJSONObject<ObjectImplementation, ObjectInterface>(request: URLRequest, concreteObject: ObjectImplementation.Type, resultReceiver: @escaping (Result<ObjectInterface>) -> Void) where ObjectImplementation: JSONDictionaryInitializable  {
+        let returnError = {
+            (error: Error?) in
+            self.resultQueue.async {
+                resultReceiver(Result(error: error))
+            }
+        }
+        getJSONDictionary(request: request, successHandler: { (jsonDict) in
+            guard let result = ObjectImplementation.init(json: jsonDict) else {
+                returnError(NSError(code: .dataParseError))
+                return
+            }
+            guard let resultInterface = result as? ObjectInterface else {
+                returnError(NSError(code: .internalError))
+                return
+            }
+            self.resultQueue.async {
+                resultReceiver(.success(resultInterface))
+            }
+        }, failureHandler: returnError)
+
     }
     
     // MARK: - MovieDataProvider
@@ -100,23 +122,16 @@ class MovieDatabaseClient: MovieDataProvider {
         }
         let request = makeRequest(path:"discover/movie", queryItems: queryItems)
         
-        let returnError = {
-            (error: Error?) in
-            self.resultQueue.async {
-                resultReceiver(Result(error: error))
-            }
-        }
-        getJSONDictionary(request: request, successHandler: { (jsonDict) in
-            let result = MovieDatabaseDiscoveryResult(json: jsonDict)
-            self.resultQueue.async {
-                resultReceiver(.success(result))
-            }
-        }, failureHandler: returnError)
+        getJSONObject(request: request, concreteObject: MovieDatabaseDiscoveryResult.self, resultReceiver: resultReceiver)
     }
     
     func fetchMovieDetail(movieID: MovieIdentifier, resultReceiver: @escaping (Result<MovieDetail>) -> Void ) {
         
     }
+}
+
+protocol JSONDictionaryInitializable {
+    init?(json: [String:Any])
 }
 
 struct MovieDatabaseAssumption {
@@ -126,7 +141,7 @@ struct MovieDatabaseAssumption {
 }
 
 
-struct MovieDatabaseDiscoveryResult : MovieSummaryResult {
+struct MovieDatabaseDiscoveryResult : MovieSummaryResult, JSONDictionaryInitializable {
     var pageNumber: UInt?
     
     var totalResults: UInt?
@@ -135,7 +150,7 @@ struct MovieDatabaseDiscoveryResult : MovieSummaryResult {
     
     var results: [MovieSummary]?
     
-    init(json: [String:Any]) {
+    init?(json: [String:Any]) {
         pageNumber = json["page"] as? UInt
         totalResults = json["total_results"] as? UInt
         totalPages = json["total_pages"] as? UInt
@@ -145,7 +160,7 @@ struct MovieDatabaseDiscoveryResult : MovieSummaryResult {
     }
 }
 
-struct MovieDatabaseMovieSummary: MovieSummary {
+struct MovieDatabaseMovieSummary: MovieSummary, JSONDictionaryInitializable {
     var movieID: MovieIdentifier
     
     var originalTitle: String?
