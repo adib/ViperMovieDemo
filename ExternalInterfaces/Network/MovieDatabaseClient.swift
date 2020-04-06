@@ -41,7 +41,7 @@ class MovieDatabaseClient: MovieDataProvider {
     }
 
     
-    func makeRequest(path: String, queryItems items: [URLQueryItem]) -> URLRequest {
+func makeRequest(path: String, queryItems items: [URLQueryItem]) -> URLRequest {
         var queryItems = items
         let url = baseURL.appendingPathComponent(path)
         queryItems.append(URLQueryItem(name:"api_key", value:apiKey))
@@ -125,8 +125,10 @@ class MovieDatabaseClient: MovieDataProvider {
         getJSONObject(request: request, concreteObject: MovieDatabaseDiscoveryResult.self, resultReceiver: resultReceiver)
     }
     
-    func fetchMovieDetail(movieID: MovieIdentifier, resultReceiver: @escaping (Result<MovieDetail>) -> Void ) {
-        
+    func fetchMovieDetail(movieID: MovieIdentifier, resultReceiver: @escaping (Result<MovieDetail>) -> Void) {
+        let idValue = movieID as! MovieDatabaseMovieIdentifier
+        let request = makeRequest(path:"movie/\(idValue.rawValue)", queryItems: [])
+        getJSONObject(request: request, concreteObject: MovieDatabaseMovieDetail.self, resultReceiver: resultReceiver)
     }
 }
 
@@ -138,6 +140,27 @@ struct MovieDatabaseAssumption {
     static let calendar = Calendar(identifier: .iso8601)
     static let timeZone = TimeZone(secondsFromGMT: 0)
     static let locale = Locale(identifier: "en_US_POSIX")
+    
+    static let ymdDateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        df.locale = Self.locale
+        df.timeZone = Self.timeZone
+        df.calendar = Self.calendar
+        return df
+    }()
+}
+
+
+func parseYMD(dateString: Any?) -> DateComponents? {
+    guard let str = dateString as? String else {
+        return nil
+    }
+    guard let dateTS = MovieDatabaseAssumption.ymdDateFormatter.date(from: str) else {
+        return nil
+    }
+    let dateComps = MovieDatabaseAssumption.calendar.dateComponents([.year, .month, .day], from: dateTS)
+    return dateComps
 }
 
 
@@ -160,6 +183,7 @@ struct MovieDatabaseDiscoveryResult : MovieSummaryResult, JSONDictionaryInitiali
     }
 }
 
+
 struct MovieDatabaseMovieSummary: MovieSummary, JSONDictionaryInitializable {
     var movieID: MovieIdentifier
     
@@ -176,20 +200,9 @@ struct MovieDatabaseMovieSummary: MovieSummary, JSONDictionaryInitializable {
         movieID = MovieDatabaseMovieIdentifier(rawValue: id)
         originalTitle = json["original_title"] as? String
         originalLanguage = json["original_language"] as? String
-        if  let releaseDateStr = json["release_date"] as? String,
-            let releaseTs = MovieDatabaseMovieSummary.ymdDateFormatter.date(from: releaseDateStr) {
-            releaseDate = MovieDatabaseAssumption.calendar.dateComponents([.year, .month, .day], from: releaseTs)
-        }
+        releaseDate = parseYMD(dateString: json["release_date"])
     }
     
-    static let ymdDateFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd"
-        df.locale = MovieDatabaseAssumption.locale
-        df.timeZone = MovieDatabaseAssumption.timeZone
-        df.calendar = MovieDatabaseAssumption.calendar
-        return df
-    }()
 }
 
 
@@ -199,4 +212,33 @@ struct MovieDatabaseMovieIdentifier: MovieIdentifier, Equatable {
 
 }
 
+
+struct MovieDatabaseMovieDetail: MovieDetail, JSONDictionaryInitializable {
+    var tagline: String?
+    
+    var runtime: TimeInterval?
+        
+    var originalTitle: String?
+    
+    var originalLanguage: String?
+    
+    var releaseDate: DateComponents?
+    
+    var movieID: MovieIdentifier
+    
+    init?(json: [String : Any]) {
+        guard let id = json["id"] as? UInt64 else {
+            return nil
+        }
+        movieID = MovieDatabaseMovieIdentifier(rawValue: id)
+        originalTitle = json["original_title"] as? String
+        originalLanguage = json["original_language"] as? String
+        releaseDate = parseYMD(dateString: json["release_date"])
+        
+        tagline = json["tagline"] as? String
+        if let runtimeInt = json["runtime"] as? Int {
+            runtime = Double(runtimeInt) / 60
+        }
+    }
+}
 

@@ -49,4 +49,29 @@ class MovieDatabaseClientTests: XCTestCase {
         }
         self.wait(for: [discoverComplete], timeout: 60)
     }
+    
+    func testParseMovieDetail() {
+        let movieID = UInt64(508439)
+        let discoverComplete = XCTestExpectation(description: "Movie Detail Completed")
+        let targetURL = baseURL.appendingPathComponent("movie/\(movieID)")
+        LocalResourcesTestProtocolHandler.register(url: targetURL, returning: findTestResource(name: "movie_detail", withExtension: "json"), mimeType: "application/json")
+        defer {
+            LocalResourcesTestProtocolHandler.unregister(url: targetURL)
+        }
+        let client = makeMovieDatabaseClient()
+        client.fetchMovieDetail(movieID: MovieDatabaseMovieIdentifier(rawValue: movieID)) { (returnValue) in
+            defer {
+                discoverComplete.fulfill()
+            }
+            guard case let .success(movieDetail) = returnValue else {
+                XCTFail("Error returned: \(returnValue)")
+                return
+            }
+            XCTAssertEqual(movieDetail.originalTitle, "Onward")
+            XCTAssertEqual(movieDetail.tagline, "Their quest begineth.")
+        }
+        self.wait(for: [discoverComplete], timeout: 60)
+
+    }
+
 }
