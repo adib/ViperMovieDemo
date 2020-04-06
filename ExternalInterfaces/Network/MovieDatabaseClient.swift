@@ -20,8 +20,8 @@ class MovieDatabaseClient: MovieDataProvider {
     
     init() {
         let subsystemQueue = type(of: self).networkSubsystem.subsystemQueue
-        jsonQueue = DispatchQueue(label:"MovieDatabaseClient-JSON",qos: .userInitiated, target:subsystemQueue)
-        resultQueue = DispatchQueue(label:"MovieDatabaseClient-Result",qos: .userInteractive, target:subsystemQueue)
+        jsonQueue = DispatchQueue(label:"MovieDatabaseClient-JSON",qos: .default, target:subsystemQueue)
+        resultQueue = DispatchQueue(label:"MovieDatabaseClient-Result",qos: .userInitiated, target:subsystemQueue)
     }
         
     var apiKey = "900a1c8214b1686a76c5fd0f50150be0"

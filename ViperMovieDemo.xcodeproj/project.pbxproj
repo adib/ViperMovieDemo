@@ -51,6 +51,7 @@
 		C060DADB24389E2900C993D8 /* libApplicationLogic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA5F2438988100C993D8 /* libApplicationLogic.a */; };
 		C060DADC24389E2900C993D8 /* libBusinessLogic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA4C24388E9A00C993D8 /* libBusinessLogic.a */; };
 		C060DADD24389E2900C993D8 /* libDomainEntities.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA3B24388AB000C993D8 /* libDomainEntities.a */; };
+		C071D1E2243AB3D900258EA6 /* AppLogicShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = C071D1E1243AB3D900258EA6 /* AppLogicShared.swift */; };
 		C0DE14182438A1CB00E09C97 /* TestUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DAC224389D6100C993D8 /* TestUtilities.framework */; };
 		C0DE141A2438A25300E09C97 /* TestProtocolHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DAB124389C6000C993D8 /* TestProtocolHandler.swift */; };
 /* End PBXBuildFile section */
@@ -186,6 +187,7 @@
 		C060DACF24389D6100C993D8 /* TestUtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtilitiesTests.swift; sourceTree = "<group>"; };
 		C060DAD124389D6100C993D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C060DAD924389D9800C993D8 /* ResourceLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceLoader.swift; sourceTree = "<group>"; };
+		C071D1E1243AB3D900258EA6 /* AppLogicShared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogicShared.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +360,7 @@
 				C060DA7B24389A9A00C993D8 /* Routers */,
 				C060DA8124389A9A00C993D8 /* ViewControllers */,
 				C060DA7324389A9A00C993D8 /* Views */,
+				C071D1E1243AB3D900258EA6 /* AppLogicShared.swift */,
 			);
 			path = ApplicationLogic;
 			sourceTree = "<group>";
@@ -823,6 +826,7 @@
 				C04EF4822439A4A700355CB8 /* BlankDetailViewControllerImp.swift in Sources */,
 				C060DA8924389A9A00C993D8 /* MovieSummaryPresenterImp.swift in Sources */,
 				C060DA8C24389A9A00C993D8 /* DiscoverMoviesViewControllerImp.swift in Sources */,
+				C071D1E2243AB3D900258EA6 /* AppLogicShared.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

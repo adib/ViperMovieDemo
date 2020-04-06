@@ -13,16 +13,22 @@ import BusinessLogic
 
 class MovieDataAdapter: MovieDataStore {    
     
+    static let appLogicSubsystem = AppLogicSubsystem.defaultInstance
+
     var lastFetchCount: Int
     
     let dataSource: MovieDataProvider
     
+    let syncQueue: DispatchQueue
+
     init(dataSource: MovieDataProvider) {
+        let subsystemQueue = type(of: self).appLogicSubsystem.subsystemQueue
+        syncQueue = DispatchQueue(label:"MovieDataAdapter-sync",qos: .userInitiated, target:subsystemQueue)
+
         self.dataSource = dataSource
         lastFetchCount = dataSource.defaultPageSize
     }
     
-    let syncQueue = DispatchQueue(label: "MovieDataAdapter-sync")
     
     func calculatePagination(fetchOffset: Int, fetchLimit: Int) -> (firstPageNumber: Int, lastPageNumber: Int, firstPageSkip: Int, lastPageCount: Int, totalPages: Int) {
         let pageSize = lastFetchCount
@@ -60,7 +66,9 @@ class MovieDataAdapter: MovieDataStore {
                     summaryResults.append(contentsOf: summaryList)
                 }
             }
-            resultReceiver(.success(summaryResults))
+            DispatchQueue.main.async {
+                resultReceiver(.success(summaryResults))
+            }
         }
         for pageNumber in firstPageNumber...lastPageNumber {
             dataSource.discoverMovies(pageNumber: pageNumber) {
