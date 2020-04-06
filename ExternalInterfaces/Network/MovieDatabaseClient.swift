@@ -99,9 +99,6 @@ class MovieDatabaseClient: MovieDataProvider {
             queryItems.append(URLQueryItem(name:"page", value:"\(page)"))
         }
         let request = makeRequest(path:"discover/movie", queryItems: queryItems)
-
-        func returnError(error: Error?) {
-        }
         
         let returnError = {
             (error: Error?) in
@@ -114,7 +111,7 @@ class MovieDatabaseClient: MovieDataProvider {
             self.resultQueue.async {
                 resultReceiver(.success(result))
             }
-        }, failureHandler: returnError)        
+        }, failureHandler: returnError)
     }
     
     func fetchMovieDetail(movieID: MovieIdentifier, resultReceiver: @escaping (Result<MovieDetail>) -> Void ) {
