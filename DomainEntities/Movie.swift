@@ -21,7 +21,7 @@ public protocol MovieSummary: Movie {
 }
 
 
-public protocol MovieIdentifier: AnyEquatable {
+public protocol MovieIdentifier {
     
 }
 
@@ -29,16 +29,4 @@ public protocol MovieIdentifier: AnyEquatable {
 public protocol MovieDetail: MovieSummary {
     var tagline: String? { get }
     var runtime: TimeInterval? { get }
-}
-
-
-public protocol AnyEquatable {
-    func isEqual(_ object: Any?) -> Bool
-}
-
-
-public extension AnyEquatable where Self: Equatable {
-   func isEqual (_ rhs: Any?) -> Bool {
-        return self == (rhs as? Self)
-    }
 }
