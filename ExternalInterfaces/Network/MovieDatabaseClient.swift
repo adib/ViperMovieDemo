@@ -53,6 +53,36 @@ class MovieDatabaseClient: MovieDataProvider {
         return request
     }
     
+    func getJSONDictionary(request: URLRequest, successHandler: @escaping (Dictionary<String,Any>) -> Void, failureHandler: @escaping(Error?) -> Void) {
+        let task = urlSession.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+            guard let receivedResponse = response as? HTTPURLResponse else {
+                failureHandler(error)
+                return
+            }
+            guard let statusCode = HTTPStatusCode(rawValue: receivedResponse.statusCode) else {
+                failureHandler(error)
+                return
+            }
+            guard statusCode.isGood() else {
+                failureHandler(NSError(code: statusCode))
+                return
+            }
+            guard let receivedData = data else {
+                failureHandler(NSError(code: .noData))
+                return
+            }
+            self.jsonQueue.async {
+                guard let jsonDict = try? JSONSerialization.jsonObject(with: receivedData, options: []) as? Dictionary<String,Any> else {
+                    failureHandler(NSError(code: .dataParseError))
+
+                    return
+                }
+                successHandler(jsonDict)
+            }
+        }
+        task.resume()
+    }
+    
     // MARK: - MovieDataProvider
     
     var defaultPageSize: Int {
@@ -71,40 +101,24 @@ class MovieDatabaseClient: MovieDataProvider {
         let request = makeRequest(path:"discover/movie", queryItems: queryItems)
 
         func returnError(error: Error?) {
+        }
+        
+        let returnError = {
+            (error: Error?) in
             self.resultQueue.async {
                 resultReceiver(Result(error: error))
             }
         }
+        getJSONDictionary(request: request, successHandler: { (jsonDict) in
+            let result = MovieDatabaseDiscoveryResult(json: jsonDict)
+            self.resultQueue.async {
+                resultReceiver(.success(result))
+            }
+        }, failureHandler: returnError)        
+    }
+    
+    func fetchMovieDetail(movieID: MovieIdentifier, resultReceiver: @escaping (Result<MovieDetail>) -> Void ) {
         
-        let task = urlSession.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-            guard let receivedResponse = response as? HTTPURLResponse else {
-                returnError(error: error)
-                return
-            }
-            guard let statusCode = HTTPStatusCode(rawValue: receivedResponse.statusCode) else {
-                returnError(error: NSError(code: .unknownHTTPStatusCode))
-                return
-            }
-            guard statusCode.isGood() else {
-                returnError(error: NSError(code: statusCode))
-                return
-            }
-            guard let receivedData = data else {
-                returnError(error: NSError(code: .noData))
-                return
-            }
-            self.jsonQueue.async {
-                guard let jsonDict = try? JSONSerialization.jsonObject(with: receivedData, options: []) as? Dictionary<String,Any> else {
-                    returnError(error: NSError(code: .dataParseError))
-                    return
-                }
-                let result = MovieDatabaseDiscoveryResult(json: jsonDict)
-                self.resultQueue.async {
-                    resultReceiver(.success(result))
-                }
-            }
-        }
-        task.resume()
     }
 }
 
