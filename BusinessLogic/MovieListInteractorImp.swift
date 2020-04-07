@@ -9,7 +9,7 @@
 import Foundation
 import DomainEntities
 
-class ListMoviesInteractorImp: MovieListInteractor {
+class MovieListInteractorImp: MovieListInteractor {
     
     var currentFilter = ListMoviesFilter()
 

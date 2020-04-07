@@ -56,7 +56,7 @@ public struct ListMoviesFilter {
 
 
 public func createMovieListInteractor() -> MovieListInteractor {
-    ListMoviesInteractorImp()
+    MovieListInteractorImp()
 }
 
 
