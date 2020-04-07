@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		40D34D02243B408B00C5E217 /* movie_detail.json in Resources */ = {isa = PBXBuildFile; fileRef = 40D34D01243B408B00C5E217 /* movie_detail.json */; };
 		C04EF4822439A4A700355CB8 /* BlankDetailViewControllerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04EF4812439A4A700355CB8 /* BlankDetailViewControllerImp.swift */; };
-		C04EF4832439AE6700355CB8 /* libApplicationLogic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA5F2438988100C993D8 /* libApplicationLogic.a */; };
-		C04EF4842439AE6700355CB8 /* libDomainEntities.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA3B24388AB000C993D8 /* libDomainEntities.a */; };
 		C04EF4862439C1D500355CB8 /* MovieDetailViewControllerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04EF4852439C1D500355CB8 /* MovieDetailViewControllerImp.swift */; };
 		C060DA1624388A7900C993D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA1524388A7900C993D8 /* AppDelegate.swift */; };
 		C060DA1824388A7900C993D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA1724388A7900C993D8 /* SceneDelegate.swift */; };
@@ -25,9 +23,6 @@
 		C060DA5924388F3000C993D8 /* MovieListInteractorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA5624388F3000C993D8 /* MovieListInteractorImp.swift */; };
 		C060DA5A24388F5500C993D8 /* libBusinessLogic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA4C24388E9A00C993D8 /* libBusinessLogic.a */; };
 		C060DA692438999200C993D8 /* libApplicationLogic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA5F2438988100C993D8 /* libApplicationLogic.a */; };
-		C060DA6A243899D200C993D8 /* libDomainEntities.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA3B24388AB000C993D8 /* libDomainEntities.a */; };
-		C060DA6B243899DE00C993D8 /* libBusinessLogic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA4C24388E9A00C993D8 /* libBusinessLogic.a */; };
-		C060DA6C243899E200C993D8 /* libDomainEntities.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C060DA3B24388AB000C993D8 /* libDomainEntities.a */; };
 		C060DA8424389A9A00C993D8 /* MovieOverviewTableViewCellImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7624389A9A00C993D8 /* MovieOverviewTableViewCellImp.swift */; };
 		C060DA8624389A9A00C993D8 /* MovieDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7924389A9A00C993D8 /* MovieDataAdapter.swift */; };
 		C060DA8724389A9A00C993D8 /* Interfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7A24389A9A00C993D8 /* Interfaces.swift */; };
@@ -58,6 +53,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		404584F3243C9E0C00B19095 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C060DA0A24388A7900C993D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C060DA5E2438988100C993D8;
+			remoteInfo = ApplicationLogic;
+		};
+		404584F5243C9E0C00B19095 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C060DA0A24388A7900C993D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C060DA3A24388AB000C993D8;
+			remoteInfo = DomainEntities;
+		};
 		C060DA2924388A7A00C993D8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C060DA0A24388A7900C993D8 /* Project object */;
@@ -222,7 +231,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C060DA6A243899D200C993D8 /* libDomainEntities.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,8 +238,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C060DA6C243899E200C993D8 /* libDomainEntities.a in Frameworks */,
-				C060DA6B243899DE00C993D8 /* libBusinessLogic.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,8 +245,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C04EF4832439AE6700355CB8 /* libApplicationLogic.a in Frameworks */,
-				C04EF4842439AE6700355CB8 /* libDomainEntities.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +614,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				404584F4243C9E0C00B19095 /* PBXTargetDependency */,
+				404584F6243C9E0C00B19095 /* PBXTargetDependency */,
 			);
 			name = ExternalInterfaces;
 			productName = ExternalInterfaces;
@@ -874,6 +880,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		404584F4243C9E0C00B19095 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C060DA5E2438988100C993D8 /* ApplicationLogic */;
+			targetProxy = 404584F3243C9E0C00B19095 /* PBXContainerItemProxy */;
+		};
+		404584F6243C9E0C00B19095 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C060DA3A24388AB000C993D8 /* DomainEntities */;
+			targetProxy = 404584F5243C9E0C00B19095 /* PBXContainerItemProxy */;
+		};
 		C060DA2A24388A7A00C993D8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C060DA1124388A7900C993D8 /* ViperMovieDemo */;
