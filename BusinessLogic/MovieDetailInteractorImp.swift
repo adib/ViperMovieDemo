@@ -11,19 +11,23 @@ import DomainEntities
 
 class MovieDetailInteractorImp: MovieDetailInteractor {
     
-    
     let movieID: MovieIdentifier
     
-    var dataStore: MovieDataStore?
+    var dataStore: MovieDataStore
     
     weak var output: MovieDetailInteractorOutput?
     
-    init(movieID: MovieIdentifier) {
+    init(movieID: MovieIdentifier, dataStore: MovieDataStore) {
         self.movieID = movieID
+        self.dataStore = dataStore
     }
  
     func updateFavorite(_ newFavoriteValue: Bool, resultReceiver: @escaping (Error?) -> Void) {
         // TODO
+    }
+    
+    func fetchDetail(resultReceiver: @escaping (Result<MovieDetail>) -> Void) {
+       // <#code#>
     }
 
 }

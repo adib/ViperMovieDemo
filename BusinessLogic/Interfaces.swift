@@ -11,7 +11,7 @@ import DomainEntities
 
 
 public protocol MovieInteractor: class {
-    var dataStore: MovieDataStore? {get set}
+    var dataStore: MovieDataStore {get set}
 }
 
 // MARK: List Movies
@@ -55,8 +55,8 @@ public struct ListMoviesFilter {
 }
 
 
-public func createMovieListInteractor() -> MovieListInteractor {
-    MovieListInteractorImp()
+public func createMovieListInteractor(dataStore: MovieDataStore) -> MovieListInteractor {
+    MovieListInteractorImp(dataStore: dataStore)
 }
 
 
@@ -64,8 +64,7 @@ public func createMovieListInteractor() -> MovieListInteractor {
 
 public protocol MovieDetailInteractor: MovieInteractor {
     var output: MovieDetailInteractorOutput? { get set}
-    
-    func updateFavorite(_ newFavoriteValue: Bool, resultReceiver: @escaping (Error?) -> Void)
+    func fetchDetail(resultReceiver: @escaping (Result<MovieDetail>) -> Void)
 }
 
 public protocol MovieDetailInteractorOutput: class {

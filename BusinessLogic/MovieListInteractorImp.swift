@@ -19,19 +19,19 @@ class MovieListInteractorImp: MovieListInteractor {
     
     var atLastPage = false
     
-    var dataStore: MovieDataStore?
+    var dataStore: MovieDataStore
     
     weak var output: MovieListInteractorOutput?
 
-    init() {
-        
+    init(dataStore: MovieDataStore) {
+        self.dataStore = dataStore
     }
     
     func fetchCurrentPage() {
-        guard let dataProvider = self.dataStore, let delegate = self.output else {
+        guard let delegate = self.output else {
             return
         }
-        dataProvider.fetchMovieSummary(filter: currentFilter, fetchOffset: currentFetchOffset, fetchLimit: fetchPageSize) {
+        dataStore.fetchMovieSummary(filter: currentFilter, fetchOffset: currentFetchOffset, fetchLimit: fetchPageSize) {
             (returnValue) in
             switch returnValue {
             case .success(let result):
@@ -47,8 +47,7 @@ class MovieListInteractorImp: MovieListInteractor {
     }
         
     func makeDetailInteractor(for movie: MovieSummary) -> MovieDetailInteractor {
-        let result = MovieDetailInteractorImp(movieID: movie.movieID)
-        result.dataStore = self.dataStore
+        let result = MovieDetailInteractorImp(movieID: movie.movieID, dataStore: dataStore)
         return result
     }
 
