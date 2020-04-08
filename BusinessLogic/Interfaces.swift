@@ -41,6 +41,7 @@ public protocol MovieListInteractorOutput: class {
 
 public protocol MovieDataStore: class {
     func fetchMovieSummary(filter: ListMoviesFilter, fetchOffset: Int, fetchLimit: Int, resultReceiver: @escaping (Result<[MovieSummary]>) -> Void)
+    func fetchMovieDetail(movieID: MovieIdentifier, resultReceiver: @escaping (Result<MovieDetail>) -> Void)
 }
 
 

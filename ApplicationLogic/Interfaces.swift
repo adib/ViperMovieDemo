@@ -55,7 +55,6 @@ public protocol MovieDetailPresenter: class {
 
 
 public protocol MovieDetailPresenterOutput: UIViewController {
-    //func presenter(_ presenter: MovieDetailPresenter, )
     func presenterDidUpdateMovieDetail(_ presenter: MovieDetailPresenter)
 }
 

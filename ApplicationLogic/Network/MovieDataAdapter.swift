@@ -11,7 +11,8 @@ import DomainEntities
 import BusinessLogic
 
 
-class MovieDataAdapter: MovieDataStore {    
+class MovieDataAdapter: MovieDataStore {
+    
     
     static let appLogicSubsystem = AppLogicSubsystem.defaultInstance
 
@@ -86,8 +87,11 @@ class MovieDataAdapter: MovieDataStore {
         }
     }
 
-    func fetchMovieDetail(movie: Movie, resultReceiver: @escaping (Result<[MovieSummary]>) -> Void) {
-        
+    func fetchMovieDetail(movieID: MovieIdentifier, resultReceiver: @escaping (Result<MovieDetail>) -> Void) {
+        dataSource.fetchMovieDetail(movieID: movieID) { (result) in
+            DispatchQueue.main.async {
+                resultReceiver(result)
+            }
+        }
     }
-        
 }

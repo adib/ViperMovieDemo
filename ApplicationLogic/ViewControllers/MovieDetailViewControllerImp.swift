@@ -12,6 +12,7 @@ import UIKit
 
 class MovieDetailViewControllerImp: UITableViewController, DetailViewController, MovieDetailPresenterOutput {
     
+    
         
     let placeholderCellIdentifier = "placeholderCell"
     
@@ -76,6 +77,7 @@ class MovieDetailViewControllerImp: UITableViewController, DetailViewController,
             var detailCell = tableView.dequeueReusableCell(withIdentifier: placeholderCellIdentifier)
             if detailCell == nil {
                 detailCell = UITableViewCell(style: .default, reuseIdentifier: placeholderCellIdentifier)
+                detailCell?.selectionStyle = .none
             }
             detailCell?.textLabel?.text = NSLocalizedString("No data loaded", comment:  "Placeholder label")
             return detailCell!
@@ -84,6 +86,7 @@ class MovieDetailViewControllerImp: UITableViewController, DetailViewController,
         var textCell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier)
         if textCell == nil {
             textCell = UITableViewCell(style: .value2, reuseIdentifier: textCellIdentifier)
+            textCell?.selectionStyle = .none
         }
         
         switch DetailRow(rawValue: indexPath.row) {
