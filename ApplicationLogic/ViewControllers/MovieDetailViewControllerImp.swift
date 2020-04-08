@@ -8,7 +8,21 @@
 
 import UIKit
 
-class MovieDetailViewControllerImp: UIViewController, DetailViewController, MovieDetailPresenterOutput {
+
+
+class MovieDetailViewControllerImp: UITableViewController, DetailViewController, MovieDetailPresenterOutput {
+    
+        
+    let placeholderCellIdentifier = "placeholderCell"
+    
+    let textCellIdentifier = "textCell"
+    
+    enum DetailRow: Int {
+        case title
+        case tagline
+        case runtime
+        case end
+    }
     
     var presenter: MovieDetailPresenter? {
         didSet {
@@ -18,37 +32,77 @@ class MovieDetailViewControllerImp: UIViewController, DetailViewController, Movi
             p.output = self
         }
     }
+        
     
-    
-
-    override func loadView() {
-        let rootLabel = UILabel()
-        rootLabel.text = NSLocalizedString("Movie Detail.", comment: "placeholder")
-        rootLabel.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin, .flexibleBottomMargin]
-
-        let rootView = UIView(frame: CGRect(x:0, y:0, width:320, height:320))
-        rootLabel.translatesAutoresizingMaskIntoConstraints = false
-        rootView.addSubview(rootLabel)
-        rootView.addConstraint(.init(item: rootLabel, attribute: .centerX, relatedBy: .equal, toItem: rootView, attribute: .centerX, multiplier: 1, constant: 0))
-        rootView.addConstraint(.init(item: rootLabel, attribute: .centerY, relatedBy: .equal, toItem: rootView, attribute: .centerY, multiplier: 1, constant: 0))
-        rootView.backgroundColor = .green
-        self.view = rootView
-    }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     // MARK: - DetailViewController
     var isEmpty: Bool {
         get { presenter == nil }
     }
+    
+    // MARK: - MovieDetailPresenterOutput
+    
+    func presenterDidUpdateMovieDetail(_ presenter: MovieDetailPresenter) {
+        if isViewLoaded {
+            self.tableView.reloadData()
+        }
+    }
 
+    // MARK: - UIViewController
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let presenter = self.presenter else {
+            return
+        }
+        presenter.refreshDetail()
+    }
+    
+    // MARK: - UITableViewController
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard presenter?.hasDetail ?? false else {
+            return 1
+        }
+        return DetailRow.end.rawValue
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let presenter = self.presenter, presenter.hasDetail else {
+            var detailCell = tableView.dequeueReusableCell(withIdentifier: placeholderCellIdentifier)
+            if detailCell == nil {
+                detailCell = UITableViewCell(style: .default, reuseIdentifier: placeholderCellIdentifier)
+            }
+            detailCell?.textLabel?.text = NSLocalizedString("No data loaded", comment:  "Placeholder label")
+            return detailCell!
+        }
+        
+        var textCell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier)
+        if textCell == nil {
+            textCell = UITableViewCell(style: .value2, reuseIdentifier: textCellIdentifier)
+        }
+        
+        switch DetailRow(rawValue: indexPath.row) {
+        case .title:
+            textCell?.textLabel?.text = NSLocalizedString("Title", comment: "Movie detail title label")
+            textCell?.detailTextLabel?.text = presenter.movieTitleText
+        case .tagline:
+            textCell?.textLabel?.text = NSLocalizedString("Tagline", comment: "Movie detail tagline label")
+            textCell?.detailTextLabel?.text = presenter.movieTaglineText
+        case .runtime:
+            textCell?.textLabel?.text = NSLocalizedString("Runtime", comment: "Movie detail runtime label")
+            textCell?.detailTextLabel?.text = presenter.movieRuntimeText
+        default:
+            ()
+        }
+        
+        return textCell!
+    }
 }
+
+// Note: As of Xcode 11.4, SwiftUI previews doesn't support files in static libraries
+

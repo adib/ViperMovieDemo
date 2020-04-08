@@ -86,5 +86,8 @@ class MovieDataAdapter: MovieDataStore {
         }
     }
 
+    func fetchMovieDetail(movie: Movie, resultReceiver: @escaping (Result<[MovieSummary]>) -> Void) {
+        
+    }
         
 }

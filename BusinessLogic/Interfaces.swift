@@ -64,9 +64,10 @@ public func createMovieListInteractor(dataStore: MovieDataStore) -> MovieListInt
 
 public protocol MovieDetailInteractor: MovieInteractor {
     var output: MovieDetailInteractorOutput? { get set}
-    func fetchDetail(resultReceiver: @escaping (Result<MovieDetail>) -> Void)
+    func fetchDetail()
 }
 
 public protocol MovieDetailInteractorOutput: class {
-    
+    func movieDetail(_ interactor: MovieDetailInteractor, didReceiveMovieDetail: MovieDetail)
+    func movieDetail(_ interactor: MovieDetailInteractor, didEncounterError: Error)
 }

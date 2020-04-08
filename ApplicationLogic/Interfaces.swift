@@ -44,11 +44,19 @@ public protocol MovieListPresenterOutput: UIViewController {
 
 public protocol MovieDetailPresenter: class {
     var output: MovieDetailPresenterOutput? {get set}
+    var hasDetail: Bool { get }
+    
+    var movieTitleText: String? { get }
+    var movieRuntimeText: String? { get }
+    var movieTaglineText: String? { get }
+    
+    func refreshDetail()
 }
 
 
 public protocol MovieDetailPresenterOutput: UIViewController {
     //func presenter(_ presenter: MovieDetailPresenter, )
+    func presenterDidUpdateMovieDetail(_ presenter: MovieDetailPresenter)
 }
 
 // MARK: MovieSummaryPresenter
