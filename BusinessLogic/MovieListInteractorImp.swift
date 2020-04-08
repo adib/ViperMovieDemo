@@ -56,6 +56,7 @@ class MovieListInteractorImp: MovieListInteractor {
     var fetchPageSize = 53
 
     func fetchFirstPage() {
+        
         var fetch = MovieFetchRequest()
         fetch.fetchLimit = fetchPageSize
         fetch.filters = [
@@ -63,6 +64,10 @@ class MovieListInteractorImp: MovieListInteractor {
         ]
         fetch.sort = (.popularity, false)
         fetch.fetchOffset = 0
+        if  let locale = preferredLocale,
+            let languageCode = locale.languageCode {
+            fetch.filters?.append((.language, languageCode, false))
+        }        
         currentFetch = fetch
         
         lastFetchCount = nil
