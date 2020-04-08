@@ -50,6 +50,7 @@ public protocol MovieDetailPresenter: class {
     var movieTitleText: String? { get }
     var movieRuntimeText: String? { get }
     var movieTaglineText: String? { get }
+    var movieReleaseDateText: String? { get }
     
     func refreshDetail()
 }

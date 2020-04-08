@@ -21,6 +21,7 @@ class MovieDetailViewControllerImp: UITableViewController, DetailViewController,
     enum DetailRow: Int {
         case title
         case tagline
+        case releaseDate
         case runtime
         case end
     }
@@ -50,10 +51,6 @@ class MovieDetailViewControllerImp: UITableViewController, DetailViewController,
     }
 
     // MARK: - UIViewController
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -96,6 +93,9 @@ class MovieDetailViewControllerImp: UITableViewController, DetailViewController,
         case .tagline:
             textCell?.textLabel?.text = NSLocalizedString("Tagline", comment: "Movie detail tagline label")
             textCell?.detailTextLabel?.text = presenter.movieTaglineText
+        case .releaseDate:
+            textCell?.textLabel?.text = NSLocalizedString("Release Date", comment: "Movie detail release date label")
+            textCell?.detailTextLabel?.text = presenter.movieReleaseDateText
         case .runtime:
             textCell?.textLabel?.text = NSLocalizedString("Runtime", comment: "Movie detail runtime label")
             textCell?.detailTextLabel?.text = presenter.movieRuntimeText

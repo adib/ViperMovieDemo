@@ -25,6 +25,15 @@ class MovieDetailPresenterImp: MovieDetailPresenter, MovieDetailInteractorOutput
         return df
     }()
     
+    lazy var releaseDateFormatter: DateFormatter = {
+        var df = DateFormatter()
+        df.dateStyle = .full
+        df.timeStyle = .none
+        df.formattingContext = .standalone
+        df.calendar = Calendar.init(identifier: .iso8601)
+        return df
+    }()
+    
     init(wireframe: MovieBrowserWireframe, interactor: MovieDetailInteractor) {
         self.wireframe = wireframe
         self.interactor = interactor
@@ -56,12 +65,28 @@ class MovieDetailPresenterImp: MovieDetailPresenter, MovieDetailInteractorOutput
             movieDetail?.tagline
         }
     }
+    
+    var movieReleaseDateText: String? {
+        get {
+            guard   let detail = movieDetail,
+                    var movieReleaseDate = detail.releaseDate else {
+                return nil
+            }
+            movieReleaseDate.calendar = releaseDateFormatter.calendar
+            guard let date = movieReleaseDate.date else {
+                return nil
+            }
+            return releaseDateFormatter.string(for: date)
+        }
+    }
+
 
     var hasDetail: Bool {
         get {
           movieDetail != nil
         }
     }
+    
 
     func refreshDetail() {
         interactor.fetchDetail()
