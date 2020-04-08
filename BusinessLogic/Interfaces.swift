@@ -24,10 +24,8 @@ public protocol MovieListInteractor: MovieInteractor {
     var fetchPageSize: Int {get set }
     
     var preferredLocale: Locale? { get set }
-    
-    var currentFilter: ListMoviesFilter {get}
-    
-    func fetchFirstPage(filter: ListMoviesFilter)
+        
+    func fetchFirstPage()
     
     func fetchNextPage()
     
@@ -44,17 +42,6 @@ public protocol MovieListInteractorOutput: class {
 public protocol MovieDataStore: class {
     func fetchMovieSummary(request: MovieFetchRequest, resultReceiver: @escaping (Result<[MovieSummary]>) -> Void)
     func fetchMovieDetail(movieID: MovieIdentifier, resultReceiver: @escaping (Result<MovieDetail>) -> Void)
-}
-
-
-public struct ListMoviesFilter {
-    public init() {
-        
-    }
-    public enum Mode {
-        case discover
-    }
-    public var mode = Mode.discover
 }
 
 

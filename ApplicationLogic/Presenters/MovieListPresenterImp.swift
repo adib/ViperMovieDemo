@@ -14,7 +14,6 @@ class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
     
     
     var movieSummary = [MovieSummaryPresenter]()
-    var filter = ListMoviesFilter()
     weak var output: MovieListPresenterOutput?
     
     weak var wireframe: MovieBrowserWireframe?
@@ -31,7 +30,7 @@ class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
     
     func loadInitialItems() {
         interactor.preferredLocale = Locale.current
-        interactor.fetchFirstPage(filter: filter)
+        interactor.fetchFirstPage()
     }
 
     func loadMoreItems() {
