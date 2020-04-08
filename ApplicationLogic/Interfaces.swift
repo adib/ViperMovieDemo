@@ -108,6 +108,7 @@ public protocol MovieDataProvider {
 
 
 // MARK: Network Errors
+
 public enum NetworkErrorCode: Int {
     case noError
     case internalError

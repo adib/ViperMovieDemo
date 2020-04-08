@@ -71,6 +71,7 @@ class DiscoverMoviesViewControllerImp: UITableViewController, MovieListPresenter
     }
 
     // MARK: UITableViewDelegate
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -112,8 +113,5 @@ class DiscoverMoviesViewControllerImp: UITableViewController, MovieListPresenter
         if bottomEdge >= scrollView.contentSize.height {
             presenter.loadMoreItems()
         }
-    }
-    
+    }    
 }
-
-

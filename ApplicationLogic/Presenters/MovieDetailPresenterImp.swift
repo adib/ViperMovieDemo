@@ -12,9 +12,10 @@ import BusinessLogic
 
 class MovieDetailPresenterImp: MovieDetailPresenter, MovieDetailInteractorOutput {
     
-        
     var movieDetail: MovieDetail?
+    
     var wireframe: MovieBrowserWireframe
+    
     var interactor: MovieDetailInteractor
     
     lazy var runtimeFormatter: DateComponentsFormatter = {

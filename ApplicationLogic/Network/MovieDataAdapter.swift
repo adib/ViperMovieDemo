@@ -13,7 +13,6 @@ import BusinessLogic
 
 class MovieDataAdapter: MovieDataStore {
     
-    
     static let appLogicSubsystem = AppLogicSubsystem.defaultInstance
 
     var lastFetchCount: Int

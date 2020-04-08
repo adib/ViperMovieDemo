@@ -12,7 +12,6 @@ import DomainEntities
 
 // MARK: List Movies
 
-
 public protocol MovieListInteractor: class {
     
     var output: MovieListInteractorOutput? {get set}
@@ -28,7 +27,6 @@ public protocol MovieListInteractor: class {
     func fetchNextPage()
     
     func makeDetailInteractor(for: MovieSummary) -> MovieDetailInteractor
-    
 }
 
 public protocol MovieListInteractorOutput: class {
@@ -52,7 +50,6 @@ public struct MovieFetchRequest {
     public var fetchOffset = 0
     
     public var fetchLimit = 0
-    
 }
 
 

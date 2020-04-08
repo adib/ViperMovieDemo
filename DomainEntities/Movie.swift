@@ -10,7 +10,6 @@ import Foundation
 
 public protocol Movie {
     var movieID: MovieIdentifier { get }
-
 }
 
 
