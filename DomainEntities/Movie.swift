@@ -30,3 +30,18 @@ public protocol MovieDetail: MovieSummary {
     var tagline: String? { get }
     var runtime: TimeInterval? { get }
 }
+
+
+public enum MovieFilterAttribute {
+    case language
+    case releaseDate
+    case isAdult
+}
+
+
+public enum MovieSortAttribute {
+    case popularity
+    case releaseDate
+}
+
+

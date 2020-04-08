@@ -13,6 +13,7 @@ import ApplicationLogic
 
 class MovieDatabaseClient: MovieDataProvider {
     
+    
     static let networkSubsystem = NetworkSubsystem.defaultInstance
     
     let jsonQueue: DispatchQueue
@@ -41,7 +42,7 @@ class MovieDatabaseClient: MovieDataProvider {
     }
 
     
-func makeRequest(path: String, queryItems items: [URLQueryItem]) -> URLRequest {
+    func makeRequest(path: String, queryItems items: [URLQueryItem]) -> URLRequest {
         var queryItems = items
         let url = baseURL.appendingPathComponent(path)
         queryItems.append(URLQueryItem(name:"api_key", value:apiKey))
@@ -113,15 +114,28 @@ func makeRequest(path: String, queryItems items: [URLQueryItem]) -> URLRequest {
         }
     }
     
-    func discoverMovies(pageNumber: Int?, resultReceiver: @escaping (Result<MovieSummaryResult>) -> Void) {
-        var queryItems = [
-            URLQueryItem(name:"sort_by", value:"popularity.desc")
-        ]
+    func fetchMovieSummaries(filter: [(attribute: MovieFilterAttribute, value: Any, isAscending: Bool)], sort: (attribute: MovieSortAttribute, isAscending: Bool)?, pageNumber: Int?, resultReceiver: @escaping (Result<MovieSummaryResult>) -> Void) {
+        var queryItems = [URLQueryItem]()
+        queryItems.reserveCapacity(filter.count + 2)
+        for filterEntry in filter {
+            switch filterEntry.attribute {
+            case .isAdult:
+                queryItems.append(.init(name: "include_adult", value: (filterEntry.value as? Bool ?? false) ? "true" : "false"))
+            case .language:
+                if let language = filterEntry.value as? String {
+                    queryItems.append(.init(name: "language", value: language))
+                }
+            case .releaseDate:
+                if let dateStr = formatYMD(dateValue: filterEntry.value) {
+                    let filterName = filterEntry.isAscending ? "release_date.lte" : "release_date.gte"
+                    queryItems.append(.init(name: filterName, value: dateStr))
+                }
+            }
+        }
         if let page = pageNumber {
             queryItems.append(URLQueryItem(name:"page", value:"\(page)"))
         }
         let request = makeRequest(path:"discover/movie", queryItems: queryItems)
-        
         getJSONObject(request: request, concreteObject: MovieDatabaseDiscoveryResult.self, resultReceiver: resultReceiver)
     }
     
@@ -163,6 +177,13 @@ func parseYMD(dateString: Any?) -> DateComponents? {
     return dateComps
 }
 
+func formatYMD(dateValue: Any?) -> String? {
+    guard let date = dateValue as? Date else {
+        return nil
+    }
+    let dateStr = MovieDatabaseAssumption.ymdDateFormatter.string(from: date)
+    return dateStr
+}
 
 struct MovieDatabaseDiscoveryResult : MovieSummaryResult, JSONDictionaryInitializable {
     var pageNumber: UInt?

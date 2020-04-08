@@ -30,6 +30,7 @@ class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
     // MARK: - MovieListPresenter
     
     func loadInitialItems() {
+        interactor.preferredLocale = Locale.current
         interactor.fetchFirstPage(filter: filter)
     }
 

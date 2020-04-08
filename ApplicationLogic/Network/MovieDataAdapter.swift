@@ -43,8 +43,8 @@ class MovieDataAdapter: MovieDataStore {
     
     // MARK: MovieDataStore
     
-    func fetchMovieSummary(filter: ListMoviesFilter, fetchOffset: Int, fetchLimit: Int, resultReceiver: @escaping (Result<[MovieSummary]>) -> Void) {
-        let (firstPageNumber, lastPageNumber, firstPageSkip, lastPageCount, totalPages) = calculatePagination(fetchOffset: fetchOffset, fetchLimit: fetchLimit)
+    func fetchMovieSummary(request: MovieFetchRequest, resultReceiver: @escaping (Result<[MovieSummary]>) -> Void) {
+        let (firstPageNumber, lastPageNumber, firstPageSkip, lastPageCount, totalPages) = calculatePagination(fetchOffset: request.fetchOffset, fetchLimit: request.fetchLimit)
         var fetchResultByPageNumber = Dictionary<Int, Result<MovieSummaryResult> >()
         fetchResultByPageNumber.reserveCapacity(totalPages)
         let checkCompletion = {
@@ -52,7 +52,7 @@ class MovieDataAdapter: MovieDataStore {
                 return
             }
             var summaryResults = [MovieSummary]()
-            summaryResults.reserveCapacity(fetchLimit)
+            summaryResults.reserveCapacity(request.fetchLimit)
             for pageNumber in firstPageNumber...lastPageNumber {
                 guard let pageResponse = fetchResultByPageNumber[pageNumber],
                     case let .success(pageResult) = pageResponse,
@@ -72,7 +72,7 @@ class MovieDataAdapter: MovieDataStore {
             }
         }
         for pageNumber in firstPageNumber...lastPageNumber {
-            dataSource.discoverMovies(pageNumber: pageNumber) {
+            dataSource.fetchMovieSummaries(filter: request.filters ?? [], sort: request.sort, pageNumber: pageNumber) {
                 (response) in
                 self.syncQueue.async {
                     if case let .success(result) = response {

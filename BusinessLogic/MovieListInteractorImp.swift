@@ -31,7 +31,14 @@ class MovieListInteractorImp: MovieListInteractor {
         guard let delegate = self.output else {
             return
         }
-        dataStore.fetchMovieSummary(filter: currentFilter, fetchOffset: currentFetchOffset, fetchLimit: fetchPageSize) {
+        var fetch = MovieFetchRequest()
+        fetch.fetchOffset = currentFetchOffset
+        fetch.fetchLimit = fetchPageSize
+        fetch.filters = [
+            (.isAdult, false, false)
+        ]
+        fetch.sort = (.popularity, false)
+        dataStore.fetchMovieSummary(request: fetch) {
             (returnValue) in
             switch returnValue {
             case .success(let result):
@@ -52,6 +59,8 @@ class MovieListInteractorImp: MovieListInteractor {
     }
 
     // MARK: - MovieListInteractor
+
+    var preferredLocale: Locale?
 
     var fetchPageSize = 53
 
