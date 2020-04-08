@@ -32,7 +32,7 @@ class MovieDatabaseClientTests: XCTestCase {
             LocalResourcesTestProtocolHandler.unregister(url: targetURL)
         }
         let client = makeMovieDatabaseClient()
-        client.discoverMovies(pageNumber: 1) { (discoverReturn) in
+        client.fetchMovieSummaries(filter: [], sort:nil, pageNumber: 1) { (discoverReturn) in
             defer {
                 discoverComplete.fulfill()
             }
@@ -69,9 +69,15 @@ class MovieDatabaseClientTests: XCTestCase {
             }
             XCTAssertEqual(movieDetail.originalTitle, "Onward")
             XCTAssertEqual(movieDetail.tagline, "Their quest begineth.")
+            if let releaseDate = movieDetail.releaseDate {
+                XCTAssertEqual(releaseDate.month, 2)
+                XCTAssertEqual(releaseDate.year, 2020)
+                XCTAssertEqual(releaseDate.day, 29)
+            } else {
+                XCTFail("Release date not parsed")
+            }
         }
         self.wait(for: [discoverComplete], timeout: 60)
-
     }
 
 }
