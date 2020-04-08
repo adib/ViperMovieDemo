@@ -10,20 +10,18 @@ import Foundation
 import DomainEntities
 
 
-public protocol MovieInteractor: class {
-    var dataStore: MovieDataStore {get set}
-}
-
 // MARK: List Movies
 
 
-public protocol MovieListInteractor: MovieInteractor {
+public protocol MovieListInteractor: class {
     
     var output: MovieListInteractorOutput? {get set}
     
     var fetchPageSize: Int {get set }
     
     var preferredLocale: Locale? { get set }
+    
+    var currentDate: Date? { get set }
         
     func fetchFirstPage()
     
@@ -65,7 +63,7 @@ public func createMovieListInteractor(dataStore: MovieDataStore) -> MovieListInt
 
 // Mark: Movie Detail
 
-public protocol MovieDetailInteractor: MovieInteractor {
+public protocol MovieDetailInteractor: class {
     var output: MovieDetailInteractorOutput? { get set}
     func fetchDetail()
 }

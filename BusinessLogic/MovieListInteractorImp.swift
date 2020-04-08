@@ -9,7 +9,7 @@
 import Foundation
 import DomainEntities
 
-class MovieListInteractorImp: MovieListInteractor {
+class MovieListInteractorImp: MovieListInteractor {    
     
     var currentFetch = MovieFetchRequest()
     
@@ -55,6 +55,8 @@ class MovieListInteractorImp: MovieListInteractor {
 
     var fetchPageSize = 60
 
+    var currentDate: Date?
+
     func fetchFirstPage() {
         
         var fetch = MovieFetchRequest()
@@ -67,6 +69,10 @@ class MovieListInteractorImp: MovieListInteractor {
         if  let locale = preferredLocale,
             let languageCode = locale.languageCode {
             fetch.filters?.append((.language, languageCode, false))
+        }
+        if let currentDate = self.currentDate {
+            let fetchDate = currentDate.advanced(by: -365.25 * 24 * 3600)
+            fetch.filters?.append((.releaseDate, fetchDate, false))
         }
         currentFetch = fetch
         

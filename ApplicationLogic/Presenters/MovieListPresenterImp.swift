@@ -30,6 +30,7 @@ class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
     
     func loadInitialItems() {
         interactor.preferredLocale = Locale.current
+        interactor.currentDate = Date()
         interactor.fetchFirstPage()
     }
 
