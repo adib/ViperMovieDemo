@@ -53,7 +53,7 @@ class MovieListInteractorImp: MovieListInteractor {
 
     var preferredLocale: Locale?
 
-    var fetchPageSize = 53
+    var fetchPageSize = 60
 
     func fetchFirstPage() {
         
@@ -67,7 +67,7 @@ class MovieListInteractorImp: MovieListInteractor {
         if  let locale = preferredLocale,
             let languageCode = locale.languageCode {
             fetch.filters?.append((.language, languageCode, false))
-        }        
+        }
         currentFetch = fetch
         
         lastFetchCount = nil
