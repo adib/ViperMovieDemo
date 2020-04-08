@@ -10,7 +10,6 @@ import Foundation
 import DomainEntities
 
 class MovieSummaryPresenterImp: MovieSummaryPresenter {
-        
     
     init(summary: MovieSummary) {
         self.movieSummary = summary

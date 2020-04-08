@@ -12,8 +12,8 @@ import BusinessLogic
 
 class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
     
-    
     var movieSummary = [MovieSummaryPresenter]()
+    
     weak var output: MovieListPresenterOutput?
     
     var wireframe: MovieBrowserWireframe
