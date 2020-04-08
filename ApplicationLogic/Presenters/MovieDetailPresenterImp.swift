@@ -17,6 +17,14 @@ class MovieDetailPresenterImp: MovieDetailPresenter, MovieDetailInteractorOutput
     var wireframe: MovieBrowserWireframe
     var interactor: MovieDetailInteractor
     
+    lazy var runtimeFormatter: DateComponentsFormatter = {
+        var df = DateComponentsFormatter()
+        df.allowedUnits = [.minute]
+        df.unitsStyle = .full
+        df.formattingContext = .standalone
+        return df
+    }()
+    
     init(wireframe: MovieBrowserWireframe, interactor: MovieDetailInteractor) {
         self.wireframe = wireframe
         self.interactor = interactor
@@ -33,9 +41,21 @@ class MovieDetailPresenterImp: MovieDetailPresenter, MovieDetailInteractorOutput
         }
     }
     
-    var movieRuntimeText: String?
+    var movieRuntimeText: String? {
+        get {
+            guard   let detail = movieDetail,
+                    let movieRuntime = detail.runtime else {
+                return nil
+            }
+            return runtimeFormatter.string(from: movieRuntime)
+        }
+    }
     
-    var movieTaglineText: String?
+    var movieTaglineText: String? {
+        get {
+            movieDetail?.tagline
+        }
+    }
 
     var hasDetail: Bool {
         get {

@@ -236,8 +236,8 @@ struct MovieDatabaseMovieDetail: MovieDetail, JSONDictionaryInitializable {
         releaseDate = parseYMD(dateString: json["release_date"])
         
         tagline = json["tagline"] as? String
-        if let runtimeInt = json["runtime"] as? Int {
-            runtime = Double(runtimeInt) / 60
+        if let runtimeValue = json["runtime"] as? Float {
+            runtime = TimeInterval(runtimeValue * 60)
         }
     }
 }
