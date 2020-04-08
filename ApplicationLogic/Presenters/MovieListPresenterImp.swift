@@ -16,7 +16,7 @@ class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
     var movieSummary = [MovieSummaryPresenter]()
     weak var output: MovieListPresenterOutput?
     
-    weak var wireframe: MovieBrowserWireframe?
+    var wireframe: MovieBrowserWireframe
     
     let interactor: MovieListInteractor
     
@@ -59,7 +59,7 @@ class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
     }
         
     func showDetailOfItem(at index: Int) {
-        guard let wireframe = self.wireframe, let output = self.output else {
+        guard let output = self.output else {
             return
         }
         let item = movieSummary[index]
@@ -90,8 +90,12 @@ class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
     }
     
     func movieList(_ showMovies: MovieListInteractor, didEncounterError error: Error) {
-        // TODO: present error
-        print("Error: \(error)")
+        guard let viewController = self.output else {
+            return
+        }
+        wireframe.present(error: error, from: viewController) {
+            self.loadMoreItems()
+        }
     }
 
 }

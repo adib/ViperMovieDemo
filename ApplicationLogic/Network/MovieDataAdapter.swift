@@ -51,24 +51,39 @@ class MovieDataAdapter: MovieDataStore {
             guard fetchResultByPageNumber.count >= totalPages else {
                 return
             }
+            var fetchError: Error?
             var summaryResults = [MovieSummary]()
             summaryResults.reserveCapacity(request.fetchLimit)
             for pageNumber in firstPageNumber...lastPageNumber {
-                guard let pageResponse = fetchResultByPageNumber[pageNumber],
-                    case let .success(pageResult) = pageResponse,
-                    let summaryList = pageResult.results else {
-                    continue
+                guard let pageResponse = fetchResultByPageNumber[pageNumber] else {
+                    return
                 }
-                if pageNumber == firstPageNumber {
-                    summaryResults.append(contentsOf: summaryList[firstPageSkip...])
-                } else if pageNumber == lastPageNumber {
-                    summaryResults.append(contentsOf: summaryList[..<lastPageCount])
-                } else {
-                    summaryResults.append(contentsOf: summaryList)
+                
+                switch pageResponse {
+                case let .success(pageResult):
+                    if let summaryList = pageResult.results {
+                        if pageNumber == firstPageNumber {
+                            summaryResults.append(contentsOf: summaryList[firstPageSkip...])
+                        } else if pageNumber == lastPageNumber {
+                            summaryResults.append(contentsOf: summaryList[..<lastPageCount])
+                        } else {
+                            summaryResults.append(contentsOf: summaryList)
+                        }
+                    }
+                case let .failure(error):
+                    fetchError = error
+                    break
                 }
+                
+            }
+            let returnResult: Result<[MovieSummary]>
+            if let err = fetchError {
+                returnResult = .failure(err)
+            } else {
+                returnResult = .success(summaryResults)
             }
             DispatchQueue.main.async {
-                resultReceiver(.success(summaryResults))
+                resultReceiver(returnResult)
             }
         }
         for pageNumber in firstPageNumber...lastPageNumber {

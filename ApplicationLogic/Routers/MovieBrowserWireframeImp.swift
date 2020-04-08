@@ -71,6 +71,16 @@ class MovieBrowserWireframeImp: MovieBrowserWireframe, UISplitViewControllerDele
         sourceVC.showDetailViewController(ctrl, sender: sourceVC)
     }
     
+    func present(error: Error, from sourceVC: UIViewController, retryHandler: (() -> Void)? ) {
+        let errorCtrl = UIAlertController(title: NSLocalizedString("Error Encountered", comment: "Generic error title"), message: error.localizedDescription, preferredStyle: .alert)
+        if let retry = retryHandler {
+            errorCtrl.addAction(.init(title: NSLocalizedString("Retry", comment: "Retry Request"), style: .default, handler: { (action) in
+                retry()
+            }))
+        }
+        errorCtrl.addAction(.init(title: NSLocalizedString("Ignore", comment: "Ignore error"), style: .cancel, handler:nil))
+        sourceVC.present(errorCtrl, animated: true, completion: nil)
+    }
 
     // MARK: - UISplitViewControllerDelegate
 

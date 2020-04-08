@@ -17,6 +17,7 @@ import DomainEntities
 public protocol MovieBrowserWireframe: class {
     var rootViewController: UIViewController { get }
     func present(movieDetail: MovieDetailPresenter, from: UIViewController)
+    func present(error: Error, from sourceVC: UIViewController, retryHandler: (() -> Void)? )
 }
 
 public func createMovieBrowserWireframe(dataProvider: MovieDataProvider) -> MovieBrowserWireframe {

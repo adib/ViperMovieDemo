@@ -81,12 +81,9 @@ class MovieDetailPresenterImp: MovieDetailPresenter, MovieDetailInteractorOutput
         guard let viewController = self.output else {
             return
         }
-        let errorCtrl = UIAlertController(title: NSLocalizedString("Error Encountered", comment: "Generic error title"), message: "\(error)", preferredStyle: .alert)
-        errorCtrl.addAction(.init(title: NSLocalizedString("Retry", comment: "Retry Load"), style: .default, handler: { (action) in
+        wireframe.present(error: error, from: viewController) {
             self.refreshDetail()
-        }))
-        errorCtrl.addAction(.init(title: NSLocalizedString("Ignore", comment: "Ignore error"), style: .cancel, handler:nil))
-        viewController.present(errorCtrl, animated: true, completion: nil)
+        }
     }
 
 }
