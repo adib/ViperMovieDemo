@@ -44,7 +44,7 @@ class MovieListInteractorImp: MovieListInteractor {
         }
     }
         
-    func makeDetailInteractor(for movie: MovieSummary) -> MovieDetailInteractor {
+    func makeDetailInteractor(for movie: Movie) -> MovieDetailInteractor {
         let result = MovieDetailInteractorImp(movieID: movie.movieID, dataStore: dataStore)
         return result
     }

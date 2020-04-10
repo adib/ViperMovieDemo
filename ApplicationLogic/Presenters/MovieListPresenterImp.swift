@@ -12,7 +12,7 @@ import BusinessLogic
 
 class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
     
-    var movieSummary = [MovieSummaryPresenter]()
+    var movieSummary = [MovieSummary]()
     
     weak var output: MovieListPresenterOutput?
     
@@ -53,9 +53,10 @@ class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
     }
 
     
-    func configureCell(_ cell: MovieSummaryPresenterOutput, forItemAt index: Int) {
-        let presenter = movieSummary[index]
-        presenter.output = cell
+    func configureCell(_ cell: MovieSummaryCell, forItemAt index: Int) {
+        let summary = movieSummary[index]
+        cell.movieID = summary.movieID
+        cell.setMovieOriginalTitle(summary.originalTitle)
     }
         
     func showDetailOfItem(at index: Int) {
@@ -63,7 +64,7 @@ class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
             return
         }
         let item = movieSummary[index]
-        let subInteractor = interactor.makeDetailInteractor(for: item.movieSummary)
+        let subInteractor = interactor.makeDetailInteractor(for: item)
         let subPresenter = MovieDetailPresenterImp(wireframe: wireframe, interactor: subInteractor)
         wireframe.present(movieDetail: subPresenter, from: output)
     }
@@ -80,10 +81,7 @@ class MovieListPresenterImp: MovieListPresenter, MovieListInteractorOutput {
             let newStartIndex = currentCount
             let newLimit = currentCount + received.count
             let addedItems = IndexSet(integersIn: newStartIndex..<newLimit)
-            let summaryPresenters = received.map {
-                MovieSummaryPresenterImp(summary: $0)
-            }
-            self.movieSummary.append(contentsOf: summaryPresenters)
+            self.movieSummary.append(contentsOf: received)
             ctrl.presenter(self, didAddItemsAt: addedItems)
         }
         

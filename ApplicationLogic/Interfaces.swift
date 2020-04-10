@@ -29,7 +29,7 @@ public func createMovieBrowserWireframe(dataProvider: MovieDataProvider) -> Movi
 public protocol MovieListPresenter: class {
     var output: MovieListPresenterOutput? {get set}
     var numberOfItems: Int { get }
-    func configureCell(_ cell: MovieSummaryPresenterOutput, forItemAt: Int)
+    func configureCell(_ cell: MovieSummaryCell, forItemAt: Int)
     func loadInitialItems()
     func loadMoreItems()
     func showDetailOfItem(at indexPath: Int)
@@ -60,20 +60,14 @@ public protocol MovieDetailPresenterOutput: UIViewController {
     func presenterDidUpdateMovieDetail(_ presenter: MovieDetailPresenter)
 }
 
-// MARK: MovieSummaryPresenter
-
-public protocol MovieSummaryPresenter: class {
-    var output: MovieSummaryPresenterOutput? { get set}
-    var movieSummary: MovieSummary { get }
-}
-
-public protocol MovieSummaryPresenterOutput: class {
-    var movieID: MovieIdentifier? {get set}
-    func setMovieOriginalTitle(_ title: String?)
-}
 
 
 // MARK: Views
+
+public protocol MovieSummaryCell: class {
+    var movieID: MovieIdentifier? {get set}
+    func setMovieOriginalTitle(_ title: String?)
+}
 
 
 // MARK: View Controllers

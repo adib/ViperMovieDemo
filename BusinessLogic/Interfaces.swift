@@ -26,7 +26,7 @@ public protocol MovieListInteractor: class {
     
     func fetchNextPage()
     
-    func makeDetailInteractor(for: MovieSummary) -> MovieDetailInteractor
+    func makeDetailInteractor(for: Movie) -> MovieDetailInteractor
 }
 
 public protocol MovieListInteractorOutput: class {
