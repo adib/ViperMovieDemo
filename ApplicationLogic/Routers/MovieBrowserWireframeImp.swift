@@ -45,7 +45,7 @@ class MovieBrowserWireframeImp: MovieBrowserWireframe, UISplitViewControllerDele
             }
             
             let interactor = createMovieListInteractor(dataStore: MovieDataAdapter(dataSource: dataProvider))
-            let discoverCtrl =  DiscoverMoviesViewControllerImp()
+            let discoverCtrl =  MovieListViewControllerImp()
             discoverCtrl.presenter = MovieListPresenterImp(wireframe: self, interactor: interactor)
 
             let blankDetailCtrl = BlankDetailViewControllerImp()

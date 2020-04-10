@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DiscoverMoviesViewControllerImp: UITableViewController, MovieListPresenterOutput {
+class MovieListViewControllerImp: UITableViewController, MovieListPresenterOutput {
     
     let movieCellIdentifier = "movieCell"
     

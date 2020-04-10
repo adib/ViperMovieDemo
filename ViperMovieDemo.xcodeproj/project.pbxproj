@@ -29,7 +29,7 @@
 		C060DA8824389A9A00C993D8 /* MovieBrowserWireframeImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7C24389A9A00C993D8 /* MovieBrowserWireframeImp.swift */; };
 		C060DA8A24389A9A00C993D8 /* MovieDetailPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA7F24389A9A00C993D8 /* MovieDetailPresenterImp.swift */; };
 		C060DA8B24389A9A00C993D8 /* MovieListPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA8024389A9A00C993D8 /* MovieListPresenterImp.swift */; };
-		C060DA8C24389A9A00C993D8 /* DiscoverMoviesViewControllerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA8224389A9A00C993D8 /* DiscoverMoviesViewControllerImp.swift */; };
+		C060DA8C24389A9A00C993D8 /* MovieListViewControllerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA8224389A9A00C993D8 /* MovieListViewControllerImp.swift */; };
 		C060DA9D24389B4700C993D8 /* MovieDatabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA9A24389B4700C993D8 /* MovieDatabaseClient.swift */; };
 		C060DA9E24389B4700C993D8 /* NetworkShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA9B24389B4700C993D8 /* NetworkShared.swift */; };
 		C060DA9F24389B4700C993D8 /* Interfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060DA9C24389B4700C993D8 /* Interfaces.swift */; };
@@ -177,7 +177,7 @@
 		C060DA7C24389A9A00C993D8 /* MovieBrowserWireframeImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieBrowserWireframeImp.swift; sourceTree = "<group>"; };
 		C060DA7F24389A9A00C993D8 /* MovieDetailPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenterImp.swift; sourceTree = "<group>"; };
 		C060DA8024389A9A00C993D8 /* MovieListPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListPresenterImp.swift; sourceTree = "<group>"; };
-		C060DA8224389A9A00C993D8 /* DiscoverMoviesViewControllerImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverMoviesViewControllerImp.swift; sourceTree = "<group>"; };
+		C060DA8224389A9A00C993D8 /* MovieListViewControllerImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListViewControllerImp.swift; sourceTree = "<group>"; };
 		C060DA9224389B1B00C993D8 /* libExternalInterfaces.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExternalInterfaces.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C060DA9A24389B4700C993D8 /* MovieDatabaseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDatabaseClient.swift; sourceTree = "<group>"; };
 		C060DA9B24389B4700C993D8 /* NetworkShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkShared.swift; sourceTree = "<group>"; };
@@ -413,7 +413,7 @@
 		C060DA8124389A9A00C993D8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C060DA8224389A9A00C993D8 /* DiscoverMoviesViewControllerImp.swift */,
+				C060DA8224389A9A00C993D8 /* MovieListViewControllerImp.swift */,
 				C04EF4812439A4A700355CB8 /* BlankDetailViewControllerImp.swift */,
 				C04EF4852439C1D500355CB8 /* MovieDetailViewControllerImp.swift */,
 			);
@@ -831,7 +831,7 @@
 				C060DA8824389A9A00C993D8 /* MovieBrowserWireframeImp.swift in Sources */,
 				C060DA8624389A9A00C993D8 /* MovieDataAdapter.swift in Sources */,
 				C04EF4822439A4A700355CB8 /* BlankDetailViewControllerImp.swift in Sources */,
-				C060DA8C24389A9A00C993D8 /* DiscoverMoviesViewControllerImp.swift in Sources */,
+				C060DA8C24389A9A00C993D8 /* MovieListViewControllerImp.swift in Sources */,
 				C071D1E2243AB3D900258EA6 /* AppLogicShared.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
