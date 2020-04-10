@@ -53,9 +53,11 @@ class MovieDetailPresenterImp: MovieDetailPresenter, MovieDetailInteractorOutput
     
     var movieRuntimeText: String? {
         get {
-            guard   let detail = movieDetail,
-                    let movieRuntime = detail.runtime else {
+            guard   let detail = movieDetail else {
                 return nil
+            }
+            guard let movieRuntime = detail.runtime else {
+                return NSLocalizedString("(unknown)", comment: "Unknown movie runtime label")
             }
             return runtimeFormatter.string(from: movieRuntime)
         }
