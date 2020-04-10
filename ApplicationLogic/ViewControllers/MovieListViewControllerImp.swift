@@ -41,7 +41,7 @@ class MovieListViewControllerImp: UITableViewController, MovieListPresenterOutpu
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(MovieOverviewTableViewCellImp.classForCoder(), forCellReuseIdentifier: movieCellIdentifier)
+        self.tableView.register(MovieSummaryTableViewCell.classForCoder(), forCellReuseIdentifier: movieCellIdentifier)
         self.tableView.rowHeight = 44
     }
         
@@ -85,7 +85,7 @@ class MovieListViewControllerImp: UITableViewController, MovieListPresenterOutpu
         
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: movieCellIdentifier, for: indexPath) as! MovieOverviewTableViewCellImp
+        let cell = tableView.dequeueReusableCell(withIdentifier: movieCellIdentifier, for: indexPath) as! MovieSummaryTableViewCell
         if let presenter = self.presenter {
             presenter.configureCell(cell, forItemAt: indexPath.row)
         }
