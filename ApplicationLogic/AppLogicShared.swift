@@ -11,7 +11,7 @@ import Foundation
 
 class AppLogicSubsystem {
     
-    let subsystemQueue = DispatchQueue(label: "network-shared", autoreleaseFrequency: .workItem)
+    let subsystemQueue = DispatchQueue(label: "appLogic-shared", autoreleaseFrequency: .workItem)
 
     static let defaultInstance = AppLogicSubsystem()
 }

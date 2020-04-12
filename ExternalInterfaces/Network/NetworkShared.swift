@@ -11,7 +11,8 @@ import Foundation
 
 class NetworkSubsystem {
     
-    let subsystemQueue = DispatchQueue(label: "network-shared", autoreleaseFrequency: .workItem)
-    
+    let jsonQueue = DispatchQueue(label: "network-json", autoreleaseFrequency: .workItem)
+    let resultQueue = DispatchQueue(label: "network-result", autoreleaseFrequency: .workItem)
+
     static let defaultInstance = NetworkSubsystem()
 }
