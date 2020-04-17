@@ -58,6 +58,7 @@ public func createMovieListInteractor(dataStore: MovieDataStore) -> MovieListInt
 }
 
 
+
 // Mark: Movie Detail
 
 public protocol MovieDetailInteractor: class {
